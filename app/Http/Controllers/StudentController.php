@@ -17,25 +17,45 @@ class StudentController extends Controller
 		->where('role_id', 2)
 		->get();
 	}
-
+	
 	public function getStudentChecklist(Request $request){
 		$curriculum_id = Auth::user()->curriculum_id;
-
 		$collection = DB::table('curriculumsubjects')
 		->leftJoin('studentchecklists', 'curriculumsubjects.curriculumsubject_id', '=', 'studentchecklists.curriculumsubject_id')
 		->join('subjects', 'curriculumsubjects.subject_id', '=', 'subjects.subject_id')
 
 		->select('curriculumsubjects.*','studentchecklists.grade as grade', 'subjects.*')
-		
 		->where('studentchecklists.user_id', $request->id)
-
-		->orWhere('curriculumsubjects.curriculum_id', $curriculum_id)
-		->where('curriculumsubjects.identifier', '!=' , 1)
+		->where('curriculumsubjects.identifier', '=' , 0)
+		->where('curriculumsubjects.curriculum_id', $curriculum_id)
 		->get();
 
 		$unique = $collection->unique('subject_code');
 		return $unique;
 
+	}
+
+	public function getStudentChecklistForStudentPage(){
+		$curriculum_id = Auth::user()->curriculum_id;
+		$user_id = Auth::user()->id;
+		$collection = DB::table('curriculumsubjects')
+		->leftJoin('studentchecklists', 'curriculumsubjects.curriculumsubject_id', '=', 'studentchecklists.curriculumsubject_id')
+		->join('subjects', 'curriculumsubjects.subject_id', '=', 'subjects.subject_id')
+
+		->select('curriculumsubjects.*','studentchecklists.grade as grade', 'subjects.*')
+		->where('studentchecklists.user_id', $user_id)
+		->where('curriculumsubjects.identifier', '=' , 0)
+		->where('curriculumsubjects.curriculum_id', $curriculum_id)
+		->get();
+
+		$unique = $collection->unique('subject_code');
+		return $unique;
+
+	}
+
+	public function studPageStudDetail()
+	{
+		return Auth::user()->l_name . ', ' . Auth::user()->f_name . ' ' . Auth::user()->m_name ;
 	}
 
 	public function updateGrade(Request $request)
@@ -44,7 +64,6 @@ class StudentController extends Controller
 		$result = DB::table('studentchecklists')
 		->where('curriculumsubject_id', $request->data)
 		->where('user_id', $request->user_id)
-		->where('identifier', '!=', '0')
 		->get();
 
 		if($result->count() > 0){

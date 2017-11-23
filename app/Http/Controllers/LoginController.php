@@ -36,7 +36,7 @@ class LoginController extends Controller
     	if ($auth)
     	{
     		return redirect()->route('admin');
-    	}
+    	} 
     	return redirect()->route('/');
     }
 

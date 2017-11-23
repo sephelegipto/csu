@@ -3,7 +3,7 @@
 		
 		<nav class="panel block" >
 			<p class="panel-heading">
-				Curriculum {{ this.$route.params.name }}
+		Welcome {{ studDetail }}
 				
 				<span class="is-pulled-right" v-if="loading">
 					<i class="fa fa-refresh fa-spin fa-2x fa-fw"></i>
@@ -555,8 +555,10 @@ export default{
 			errors:{},
 			loading:false,
 			searchQuery:'',
-			temp:'',
-			subjects:''
+			temp:{},
+			subjects:'',
+			zxc:{},
+			studDetail:''
 		}
 	},
 	watch:{
@@ -576,9 +578,15 @@ export default{
 			}
 		},
 		mounted(){
-			axios.post('/studentchecklist/getData', {id : this.$route.params.id, curriculum_id : this.$route.params.curriculum_id})
+		
+			axios.post('/studentchecklist/getData')
 			.then((response)=> this.temp = response.data)
+			.catch((error) => this.errors = error.response.data.errors),
+
+			axios.post('/studPageStudDetail/getData')
+			.then((response)=> this.studDetail = response.data)
 			.catch((error) => this.errors = error.response.data.errors)
+			
 		},
 		methods:{
 			openAdd(year, sem){

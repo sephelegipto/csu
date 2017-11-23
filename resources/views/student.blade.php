@@ -17,27 +17,19 @@
 
 </head>
 <body>
-    <div id="app">
+    <div id="student">
+        <StudentHeader></StudentHeader>
+        <div class="container">
+            <StudPageChecklist></StudPageChecklist>
 
-        @if (Auth::user()->role_id === 1)
-            <Myheader></Myheader>
-            <div class="container">
-                <router-view></router-view>
-
-            </div>
-            <Myfooter></Myfooter>
-        @elseif (Auth::user()->role_id === 2)
-            <StudentHeader></StudentHeader>
-            <div class="container">
-                <Studpagechecklist></Studpagechecklist>
-
-            </div>
-            <MyFooter></MyFooter>
-        @endif
-        
+        </div>
+        <StudentFooter></StudentFooter>
         
     </div>
-    <script src="{{ asset('js/app.js') }}">
+    <script>
+        
+    </script>
+    <script src="{{ asset('js/student.js') }}">
 
         $.ajaxSetup({
             headers: {

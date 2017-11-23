@@ -20,6 +20,7 @@ Route::get('/noPermission',function(){
 Route::group(['middleware'=>['authen']], function(){
 	Route::get('/logout',['as'=>'logout', 'uses'=>'LoginController@getLogout']);
 	Route::get('/admin',['as'=>'admin', 'uses'=>'AdminController@dashboard']);
+	Route::get('/studentPage',['as'=>'studentPage', 'uses'=>'AdminController@student']);
 	Route::get('/login/index', 'LoginController@index');
 });
 
@@ -56,7 +57,14 @@ Route::group(['middleware'=>['authen','roles'],'roles'=>['admin']],function(){
 	Route::post('/student/store', 'StudentController@store');
 	Route::post('/student/updateGrade','StudentController@updateGrade');
 	Route::resource('student','StudentController');
+	Route::post('/studentAuth/getStudentAuth','AdminController@getAuth');
 
+	
+});
+
+Route::group(['middleware'=>['authen','roles'],'roles'=>['student']],function(){	
+	Route::post('/studentchecklist/getData','StudentController@getStudentChecklistForStudentPage');
+	Route::post('/studPageStudDetail/getData','StudentController@studPageStudDetail');
 	
 });
 

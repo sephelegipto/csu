@@ -18,8 +18,7 @@ class CourseController extends Controller
 	}
 
 	public function store(Request $request)
-	{
-		
+	{		
 		$id = DB::table('courses')->insertGetId(
 			['department_id' => $request->department_id, 'name' => $request->course_name,
             'abbre' => $request->abbre]
@@ -33,9 +32,7 @@ class CourseController extends Controller
 	}
 
 	public function destroy(Course $course)
-    {
-
-    	
+    {    	
     	Course::where('course_id', $course->course_id)->delete();
     }
 
@@ -48,6 +45,5 @@ class CourseController extends Controller
     	$course->department_id = $dept_id;   
         $course->abbre = $request->abbre;	
     	$course->save();
-
     }
 }
