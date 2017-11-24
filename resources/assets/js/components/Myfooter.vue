@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="content has-text-centered">
 				<p>
-					<strong>Vuejs Phonebook App</strong> by <a href="">J Sephel Eliphaz B. Egipto</a>. Access source code <a href="https://github.com/sephelegipto">Phonebook</a>.
+					<strong>Website</strong> by <a href="">CSU Carig</a>. Access source code <a href="https://github.com/sephelegipto/csu">CSU</a>.
 				</p>
 			</div>
 		</div>

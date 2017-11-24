@@ -63,7 +63,7 @@ Route::group(['middleware'=>['authen','roles'],'roles'=>['admin']],function(){
 });
 
 Route::group(['middleware'=>['authen','roles'],'roles'=>['student']],function(){	
-	Route::post('/studentchecklist/getData','StudentController@getStudentChecklistForStudentPage');
+	Route::post('/studentchecklistpage/getData','StudentController@getStudentChecklistForStudentPage');
 	Route::post('/studPageStudDetail/getData','StudentController@studPageStudDetail');
 	
 });

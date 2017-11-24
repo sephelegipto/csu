@@ -14,6 +14,7 @@
 					</div>
 					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>
 				</div>
+				
 		
 			</section>
 			<footer class="modal-card-foot">

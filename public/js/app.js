@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 18);
+/******/ 	return __webpack_require__(__webpack_require__.s = 19);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -179,8 +179,8 @@ module.exports = function normalizeComponent (
 "use strict";
 
 
-var bind = __webpack_require__(4);
-var isBuffer = __webpack_require__(27);
+var bind = __webpack_require__(6);
+var isBuffer = __webpack_require__(28);
 
 /*global toString:true*/
 
@@ -517,7 +517,7 @@ module.exports = g;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(1);
-var normalizeHeaderName = __webpack_require__(29);
+var normalizeHeaderName = __webpack_require__(30);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -533,10 +533,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(6);
+    adapter = __webpack_require__(8);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(6);
+    adapter = __webpack_require__(8);
   }
   return adapter;
 }
@@ -607,10 +607,106 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
 /* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(58)
+/* template */
+var __vue_template__ = __webpack_require__(59)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\CurriculumSubjectAdd.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-349d8c5e", Component.options)
+  } else {
+    hotAPI.reload("data-v-349d8c5e", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(60)
+/* template */
+var __vue_template__ = __webpack_require__(61)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\CurriculumSubjectShow.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-088d62fd", Component.options)
+  } else {
+    hotAPI.reload("data-v-088d62fd", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -628,7 +724,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 5 */
+/* 7 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -818,19 +914,19 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(1);
-var settle = __webpack_require__(30);
-var buildURL = __webpack_require__(32);
-var parseHeaders = __webpack_require__(33);
-var isURLSameOrigin = __webpack_require__(34);
-var createError = __webpack_require__(7);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(35);
+var settle = __webpack_require__(31);
+var buildURL = __webpack_require__(33);
+var parseHeaders = __webpack_require__(34);
+var isURLSameOrigin = __webpack_require__(35);
+var createError = __webpack_require__(9);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(36);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -927,7 +1023,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(36);
+      var cookies = __webpack_require__(37);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -1005,13 +1101,13 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(31);
+var enhanceError = __webpack_require__(32);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -1030,7 +1126,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 8 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1042,7 +1138,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1068,7 +1164,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11688,18 +11784,66 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(44).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(45).setImmediate))
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(71)
+var __vue_script__ = __webpack_require__(62)
 /* template */
-var __vue_template__ = __webpack_require__(72)
+var __vue_template__ = __webpack_require__(63)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\StudentChecklistUpdate.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-19cc1d75", Component.options)
+  } else {
+    hotAPI.reload("data-v-19cc1d75", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(80)
+/* template */
+var __vue_template__ = __webpack_require__(81)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -11739,15 +11883,15 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 12 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(73)
+var __vue_script__ = __webpack_require__(82)
 /* template */
-var __vue_template__ = __webpack_require__(74)
+var __vue_template__ = __webpack_require__(83)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -11787,15 +11931,15 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 13 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(75)
+var __vue_script__ = __webpack_require__(84)
 /* template */
-var __vue_template__ = __webpack_require__(76)
+var __vue_template__ = __webpack_require__(85)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -11835,15 +11979,15 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 14 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(82)
+var __vue_script__ = __webpack_require__(91)
 /* template */
-var __vue_template__ = __webpack_require__(83)
+var __vue_template__ = __webpack_require__(92)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -11883,15 +12027,15 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 15 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(84)
+var __vue_script__ = __webpack_require__(93)
 /* template */
-var __vue_template__ = __webpack_require__(85)
+var __vue_template__ = __webpack_require__(94)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -11931,146 +12075,50 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(131)
-/* template */
-var __vue_template__ = __webpack_require__(132)
-/* template functional */
-  var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\CurriculumSubjectAdd.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-349d8c5e", Component.options)
-  } else {
-    hotAPI.reload("data-v-349d8c5e", Component.options)
-' + '  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(133)
-/* template */
-var __vue_template__ = __webpack_require__(134)
-/* template functional */
-  var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\CurriculumSubjectShow.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-088d62fd", Component.options)
-  } else {
-    hotAPI.reload("data-v-088d62fd", Component.options)
-' + '  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(19);
-module.exports = __webpack_require__(142);
-
-
-/***/ }),
 /* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(20);
+module.exports = __webpack_require__(144);
+
+
+/***/ }),
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(46);
-__webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(47);
+__webpack_require__(21);
 
-window.Vue = __webpack_require__(10);
+window.Vue = __webpack_require__(12);
 
 
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
-var Myheader = __webpack_require__(47);
-var Myfooter = __webpack_require__(50);
+var Myheader = __webpack_require__(48);
+var Myfooter = __webpack_require__(51);
 
-var Studentheader = __webpack_require__(52);
+var Studentheader = __webpack_require__(53);
 
-var Studpagechecklist = __webpack_require__(55);
-var Dashboard = __webpack_require__(56);
-var Student = __webpack_require__(57);
-var Home = __webpack_require__(69);
-var About = __webpack_require__(78);
-var SubjectPerCourse = __webpack_require__(80);
-var Subject = __webpack_require__(87);
-var Department = __webpack_require__(99);
-var Course = __webpack_require__(111);
-var Curriculum = __webpack_require__(117);
-var CurriculumSubject = __webpack_require__(129);
-var StudentChecklist = __webpack_require__(136);
+var Studpagechecklist = __webpack_require__(56);
+var Dashboard = __webpack_require__(65);
+var Student = __webpack_require__(66);
+var Home = __webpack_require__(78);
+var About = __webpack_require__(87);
+var SubjectPerCourse = __webpack_require__(89);
+var Subject = __webpack_require__(96);
+var Department = __webpack_require__(108);
+var Course = __webpack_require__(120);
+var Curriculum = __webpack_require__(126);
+var CurriculumSubject = __webpack_require__(138);
+var StudentChecklist = __webpack_require__(141);
 
-var Add = __webpack_require__(11);
+var Add = __webpack_require__(14);
 
 var routes = [{ path: '/dashboard', component: Dashboard }, { path: '/student', component: Student }, { path: '/home', component: Home }, { path: '/about', component: About }, { path: '/subject', component: Subject }, { path: '/subject/:id/:name', component: Subject }, { path: '/department', component: Department }, { path: '/course', component: Course }, { path: '/department', component: Department }, { path: '/curriculum', component: Curriculum }, { path: '/curriculumsubject/:id/:course/:year', component: CurriculumSubject }, { path: '/studentchecklist/:id/:curriculum_id/:name', component: StudentChecklist }];
 
@@ -12086,11 +12134,11 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 });
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(21);
+window._ = __webpack_require__(22);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -12099,9 +12147,9 @@ window._ = __webpack_require__(21);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(23);
+  window.$ = window.jQuery = __webpack_require__(24);
 
-  __webpack_require__(24);
+  __webpack_require__(25);
 } catch (e) {}
 
 /**
@@ -12110,7 +12158,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(25);
+window.axios = __webpack_require__(26);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -12144,7 +12192,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -29233,10 +29281,10 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(22)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(23)(module)))
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -29264,7 +29312,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -39524,7 +39572,7 @@ return jQuery;
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports) {
 
 /*!
@@ -41907,21 +41955,21 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(26);
+module.exports = __webpack_require__(27);
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(1);
-var bind = __webpack_require__(4);
-var Axios = __webpack_require__(28);
+var bind = __webpack_require__(6);
+var Axios = __webpack_require__(29);
 var defaults = __webpack_require__(3);
 
 /**
@@ -41955,15 +42003,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(9);
-axios.CancelToken = __webpack_require__(42);
-axios.isCancel = __webpack_require__(8);
+axios.Cancel = __webpack_require__(11);
+axios.CancelToken = __webpack_require__(43);
+axios.isCancel = __webpack_require__(10);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(43);
+axios.spread = __webpack_require__(44);
 
 module.exports = axios;
 
@@ -41972,7 +42020,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports) {
 
 /*!
@@ -41999,7 +42047,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42007,8 +42055,8 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(3);
 var utils = __webpack_require__(1);
-var InterceptorManager = __webpack_require__(37);
-var dispatchRequest = __webpack_require__(38);
+var InterceptorManager = __webpack_require__(38);
+var dispatchRequest = __webpack_require__(39);
 
 /**
  * Create a new instance of Axios
@@ -42085,7 +42133,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42104,13 +42152,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(7);
+var createError = __webpack_require__(9);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -42137,7 +42185,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42165,7 +42213,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42240,7 +42288,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42300,7 +42348,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42375,7 +42423,7 @@ module.exports = (
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42418,7 +42466,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42478,7 +42526,7 @@ module.exports = (
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42537,18 +42585,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(1);
-var transformData = __webpack_require__(39);
-var isCancel = __webpack_require__(8);
+var transformData = __webpack_require__(40);
+var isCancel = __webpack_require__(10);
 var defaults = __webpack_require__(3);
-var isAbsoluteURL = __webpack_require__(40);
-var combineURLs = __webpack_require__(41);
+var isAbsoluteURL = __webpack_require__(41);
+var combineURLs = __webpack_require__(42);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -42630,7 +42678,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42657,7 +42705,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42678,7 +42726,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42699,13 +42747,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(9);
+var Cancel = __webpack_require__(11);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -42763,7 +42811,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42797,7 +42845,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var apply = Function.prototype.apply;
@@ -42850,13 +42898,13 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(45);
+__webpack_require__(46);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -43046,10 +43094,10 @@ exports.clearImmediate = clearImmediate;
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(7)))
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45679,15 +45727,15 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(48)
+var __vue_script__ = __webpack_require__(49)
 /* template */
-var __vue_template__ = __webpack_require__(49)
+var __vue_template__ = __webpack_require__(50)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -45727,7 +45775,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45779,7 +45827,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -45899,7 +45947,7 @@ if (false) {
 }
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -45907,7 +45955,7 @@ var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(51)
+var __vue_template__ = __webpack_require__(52)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -45947,7 +45995,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -45965,15 +46013,15 @@ var staticRenderFns = [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "content has-text-centered" }, [
           _c("p", [
-            _c("strong", [_vm._v("Vuejs Phonebook App")]),
+            _c("strong", [_vm._v("Website")]),
             _vm._v(" by "),
-            _c("a", { attrs: { href: "" } }, [
-              _vm._v("J Sephel Eliphaz B. Egipto")
-            ]),
+            _c("a", { attrs: { href: "" } }, [_vm._v("CSU Carig")]),
             _vm._v(". Access source code "),
-            _c("a", { attrs: { href: "https://github.com/sephelegipto" } }, [
-              _vm._v("Phonebook")
-            ]),
+            _c(
+              "a",
+              { attrs: { href: "https://github.com/sephelegipto/csu" } },
+              [_vm._v("CSU")]
+            ),
             _vm._v(".\n\t\t\t")
           ])
         ])
@@ -45991,15 +46039,15 @@ if (false) {
 }
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(53)
+var __vue_script__ = __webpack_require__(54)
 /* template */
-var __vue_template__ = __webpack_require__(54)
+var __vue_template__ = __webpack_require__(55)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -46039,7 +46087,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -46085,7 +46133,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -46169,15 +46217,15 @@ if (false) {
 }
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(155)
+var __vue_script__ = __webpack_require__(57)
 /* template */
-var __vue_template__ = __webpack_require__(156)
+var __vue_template__ = __webpack_require__(64)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -46217,7 +46265,2539 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 56 */
+/* 57 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var Add = __webpack_require__(4);
+var Show = __webpack_require__(5);
+var Update = __webpack_require__(13);
+/* harmony default export */ __webpack_exports__["default"] = ({
+	name: 'tabs',
+	components: { Add: Add, Show: Show, Update: Update },
+	data: function data() {
+		return {
+			currentTab: 0,
+			tabs: ['1st Year', '2nd Year', '3rd Year', '4th Year'],
+			addActive: '',
+			showActive: '',
+			updateActive: '',
+			lists: {},
+			errors: {},
+			loading: false,
+			searchQuery: '',
+			temp: {},
+			subjects: '',
+			zxc: {},
+			studDetail: ''
+		};
+	},
+
+	watch: {
+		searchQuery: function searchQuery() {
+			var _this = this;
+
+			if (this.searchQuery.length > 0) {
+				this.temp = this.lists.filter(function (item) {
+					return Object.keys(item).some(function (key) {
+						var string = String(item[key]);
+						return string.toLowerCase().indexOf(_this.searchQuery.toLowerCase()) > -1;
+						// console.log(string)
+					});
+				});
+				// console.log(result)
+			} else {
+				this.temp = this.lists;
+			}
+		}
+	},
+	mounted: function mounted() {
+		var _this2 = this;
+
+		axios.post('/studentchecklistpage/getData').then(function (response) {
+			return _this2.temp = response.data;
+		}).catch(function (error) {
+			return _this2.errors = error.response.data.errors;
+		});
+	},
+
+	methods: {
+		openAdd: function openAdd(year, sem) {
+			this.$children[0].list.year = year;
+			this.$children[0].list.course_id = this.$route.params.id;
+			this.$children[0].list.sem = sem;
+			this.$children[0].subject = this.subjects;
+			this.addActive = 'is-active';
+		},
+		openShow: function openShow(key) {
+			this.$children[1].list = this.temp[key];
+			this.showActive = 'is-active';
+		},
+		openUpdate: function openUpdate(key) {
+			this.$children[2].list = this.temp[key];
+			this.updateActive = 'is-active';
+		},
+		close: function close() {
+			this.addActive = this.showActive = this.updateActive = '';
+		},
+		del: function del(key, curriculumsubject_id) {
+			var _this3 = this;
+
+			if (confirm("Are you sure ?")) {
+				this.loading = !this.loading;
+				axios.delete('/curriculumsubject/' + curriculumsubject_id).then(function (response) {
+					_this3.subjects.push(_this3.lists[key]);
+
+					_this3.lists.splice(key, 1);_this3.loading = !_this3.loading;
+				}).catch(function (error) {
+					return console.log(error);
+				});
+			}
+			console.log(key + ' ' + curriculumsubject_id);
+		}
+	}
+});
+
+/***/ }),
+/* 58 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+	props: ['openmodal'],
+	data: function data() {
+		return {
+			list: {
+				subject_id: '',
+				department_id: '',
+				year: '',
+				sem: '',
+				course_id: '',
+				prerequisite: '',
+				units: '',
+				lec_hours: '',
+				lab_hours: '',
+				contact_hours: ''
+
+			},
+			subject: {},
+			errors: {}
+		};
+	},
+
+	computed: {
+		// a computed getter
+		computeTotal: function computeTotal() {
+			// `this` points to the vm instance
+			return Number(this.list.lab_hours) + Number(this.list.lec_hours);
+		}
+	},
+	methods: {
+		close: function close() {
+			this.$emit('closeRequest');
+		},
+		save: function save() {
+			var _this = this;
+
+			this.$data.list.subject_id = this.$data.subject[this.$data.list.subject_key].subject_id;
+			axios.post('/curriculumsubject/store', this.$data.list).then(function (response) {
+				console.log(response);
+
+				_this.close();
+				_this.$parent.lists.push(response.data[0]);
+
+				_this.subject.splice(_this.list.subject_key, 1);
+				_this.list = {};
+			}).catch(function (error) {
+				return _this.errors = error.response.data.errors;
+			});
+		}
+	}
+});
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "modal", class: _vm.openmodal }, [
+    _c("div", { staticClass: "modal-background" }),
+    _vm._v(" "),
+    _c("div", { staticClass: "modal-card" }, [
+      _c("header", { staticClass: "modal-card-head" }, [
+        _c("p", { staticClass: "modal-card-title" }, [_vm._v("Add New Entry")]),
+        _vm._v(" "),
+        _c("button", {
+          staticClass: "delete",
+          attrs: { "aria-label": "close" },
+          on: { click: _vm.close }
+        })
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "modal-card-body" }, [
+        _c("div", { staticClass: "field" }, [
+          _c("label", { staticClass: "label" }, [_vm._v("Subject")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "select" }, [
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.list.subject_key,
+                    expression: "list.subject_key"
+                  }
+                ],
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.$set(
+                      _vm.list,
+                      "subject_key",
+                      $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                    )
+                  }
+                }
+              },
+              _vm._l(_vm.subject, function(sub, key) {
+                return _c("option", { domProps: { value: key } }, [
+                  _vm._v("\n\t\t\t\t\t\t" + _vm._s(sub.descriptive_title))
+                ])
+              })
+            )
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("label", { staticClass: "label" }, [_vm._v("Prerequisite")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.list.prerequisite,
+                  expression: "list.prerequisite"
+                }
+              ],
+              staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
+              attrs: { type: "text", placeholder: "Prerequisite" },
+              domProps: { value: _vm.list.prerequisite },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.list, "prerequisite", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("label", { staticClass: "label" }, [_vm._v("Units")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.list.units,
+                  expression: "list.units"
+                }
+              ],
+              staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
+              attrs: { type: "number", placeholder: "Units" },
+              domProps: { value: _vm.list.units },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.list, "units", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("label", { staticClass: "label" }, [_vm._v("Lecture Hours")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.list.lec_hours,
+                  expression: "list.lec_hours"
+                }
+              ],
+              staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
+              attrs: { type: "number", placeholder: "Lecture Hours" },
+              domProps: { value: _vm.list.lec_hours },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.list, "lec_hours", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("label", { staticClass: "label" }, [_vm._v("Lab Hours")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.list.lab_hours,
+                  expression: "list.lab_hours"
+                }
+              ],
+              staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
+              attrs: { type: "number", placeholder: "Lab Hours" },
+              domProps: { value: _vm.list.lab_hours },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.list, "lab_hours", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("label", { staticClass: "label" }, [_vm._v("Contact Hours")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
+              attrs: {
+                type: "number",
+                placeholder: "Contact Hours",
+                disabled: ""
+              },
+              domProps: { value: _vm.computeTotal }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e()
+        ])
+      ]),
+      _vm._v(" "),
+      _c("footer", { staticClass: "modal-card-foot" }, [
+        _c(
+          "button",
+          { staticClass: "button is-success", on: { click: _vm.save } },
+          [_vm._v("Add")]
+        ),
+        _vm._v(" "),
+        _c("button", { staticClass: "button", on: { click: _vm.close } }, [
+          _vm._v("Cancel")
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-349d8c5e", module.exports)
+  }
+}
+
+/***/ }),
+/* 60 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	props: ['openmodal'],
+	data: function data() {
+		return {
+			list: ''
+		};
+	},
+
+	methods: {
+		close: function close() {
+			this.$emit('closeRequest');
+		}
+	}
+});
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "modal", class: _vm.openmodal }, [
+    _c("div", { staticClass: "modal-background" }),
+    _vm._v(" "),
+    _c("div", { staticClass: "modal-card" }, [
+      _c("header", { staticClass: "modal-card-head" }, [
+        _c("p", { staticClass: "modal-card-title" }, [
+          _vm._v(_vm._s(_vm.list.descriptive_title) + "'s Details")
+        ]),
+        _vm._v(" "),
+        _c("button", {
+          staticClass: "delete",
+          attrs: { "aria-label": "close" },
+          on: { click: _vm.close }
+        })
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "modal-card-body" }, [
+        _c("li", { staticClass: "panel-block" }, [
+          _vm._m(0),
+          _vm._v(" " + _vm._s(_vm.list.subject_code) + "\n\t\t\t")
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "panel-block" }, [
+          _vm._m(1),
+          _vm._v(" " + _vm._s(_vm.list.descriptive_title) + "\n\t\t\t")
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "panel-block" }, [
+          _vm._m(2),
+          _vm._v(" " + _vm._s(_vm.list.prerequisite) + "\n\t\t\t")
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "panel-block" }, [
+          _vm._m(3),
+          _vm._v(" " + _vm._s(_vm.list.units) + "\n\t\t\t")
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "panel-block" }, [
+          _vm._m(4),
+          _vm._v(" " + _vm._s(_vm.list.lec_hours) + "\n\t\t\t")
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "panel-block" }, [
+          _vm._m(5),
+          _vm._v(" " + _vm._s(_vm.list.lab_hours) + "\n\t\t\t")
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "panel-block" }, [
+          _vm._m(6),
+          _vm._v(" " + _vm._s(_vm.list.contact_hours) + "\n\t\t\t")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("footer", { staticClass: "modal-card-foot" }, [
+        _c("button", { staticClass: "button", on: { click: _vm.close } }, [
+          _vm._v("Cancel")
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "column is-3" }, [
+      _c("b", [_vm._v("Subject Code")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "column is-3" }, [
+      _c("b", [_vm._v("Descriptive Title")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "column is-3" }, [
+      _c("b", [_vm._v("Prerequisite")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "column is-3" }, [
+      _c("b", [_vm._v("Units")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "column is-3" }, [
+      _c("b", [_vm._v("Lecture Hours")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "column is-3" }, [
+      _c("b", [_vm._v("Lab Hours")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "column is-3" }, [
+      _c("b", [_vm._v("Contact Hours")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-088d62fd", module.exports)
+  }
+}
+
+/***/ }),
+/* 62 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	props: ['openmodal'],
+	data: function data() {
+		return {
+			list: {},
+			errors: {}
+		};
+	},
+
+	methods: {
+		close: function close() {
+			this.$emit('closeRequest');
+		},
+		update: function update() {
+			var _this = this;
+
+			axios.post('/student/updateGrade', { data: this.$data.list.curriculumsubject_id, user_id: this.$route.params.id, grade: this.$data.list.grade }).then(function (response) {
+				_this.close();
+			}).catch(function (error) {
+				return _this.errors = error.response.data.errors;
+			});
+		}
+	}
+});
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "modal", class: _vm.openmodal }, [
+    _c("div", { staticClass: "modal-background" }),
+    _vm._v(" "),
+    _c("div", { staticClass: "modal-card" }, [
+      _c("header", { staticClass: "modal-card-head" }, [
+        _c("p", { staticClass: "modal-card-title" }, [
+          _vm._v("Update " + _vm._s(_vm.list.name) + "'s Details")
+        ]),
+        _vm._v(" "),
+        _c("button", {
+          staticClass: "delete",
+          attrs: { "aria-label": "close" },
+          on: { click: _vm.close }
+        })
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "modal-card-body" }, [
+        _c("div", { staticClass: "field" }, [
+          _c("label", { staticClass: "label" }, [_vm._v("Grade")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.list.grade,
+                  expression: "list.grade"
+                }
+              ],
+              staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
+              attrs: { type: "text", placeholder: "Name" },
+              domProps: { value: _vm.list.grade },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.list, "grade", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e()
+        ])
+      ]),
+      _vm._v(" "),
+      _c("footer", { staticClass: "modal-card-foot" }, [
+        _c(
+          "button",
+          { staticClass: "button is-success", on: { click: _vm.update } },
+          [_vm._v("Update")]
+        ),
+        _vm._v(" "),
+        _c("button", { staticClass: "button", on: { click: _vm.close } }, [
+          _vm._v("Cancel")
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-19cc1d75", module.exports)
+  }
+}
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("nav", { staticClass: "panel block" }, [
+        _c("p", { staticClass: "panel-heading" }, [
+          _vm._v("\n\tWelcome " + _vm._s(_vm.studDetail) + "\n\t\t\t\n\t\t\t"),
+          _vm.loading
+            ? _c("span", { staticClass: "is-pulled-right" }, [
+                _c("i", { staticClass: "fa fa-refresh fa-spin fa-2x fa-fw" })
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "panel-block" }, [
+          _c("div", { staticClass: "tabs is-medium" }, [
+            _c(
+              "div",
+              { staticClass: "control" },
+              _vm._l(_vm.tabs, function(tab, index) {
+                return _c(
+                  "button",
+                  {
+                    staticClass: "button",
+                    class: { active: _vm.currentTab === index },
+                    on: {
+                      click: function($event) {
+                        _vm.currentTab = index
+                      }
+                    }
+                  },
+                  [_vm._v(_vm._s(tab))]
+                )
+              })
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "panel" }, [
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.currentTab === 0,
+                  expression: "currentTab === 0"
+                }
+              ],
+              staticClass: "container"
+            },
+            [
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._m(1),
+              _vm._v(" "),
+              _vm._l(_vm.temp, function(item, key) {
+                return item.year == 1 && item.sem == 1
+                  ? _c("a", { staticClass: "panel-block " }, [
+                      _c("span", { staticClass: "column is-2" }, [
+                        _vm._v(
+                          "\n\n\t\t\t\t\t\t" +
+                            _vm._s(item.subject_code) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-3" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.descriptive_title) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.prerequisite) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.lec_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.lab_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.contact_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "panel-icon column is-1" }, [
+                        _c("i", {
+                          staticClass: "has-text-primary fa fa-edit",
+                          attrs: { "aria-hidden": "true" },
+                          on: {
+                            click: function($event) {
+                              _vm.openUpdate(key)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  : _vm._e()
+              }),
+              _vm._v(" "),
+              _vm._m(2),
+              _vm._v(" "),
+              _vm._m(3),
+              _vm._v(" "),
+              _vm._l(_vm.temp, function(item, key) {
+                return item.year == 1 && item.sem == 2
+                  ? _c("a", { staticClass: "panel-block " }, [
+                      _c("span", { staticClass: "column is-2" }, [
+                        _vm._v(
+                          "\n\n\t\t\t\t\t\t" +
+                            _vm._s(item.subject_code) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-3" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.descriptive_title) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.prerequisite) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.lec_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.lab_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.contact_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "panel-icon column is-1" }, [
+                        _c("i", {
+                          staticClass: "has-text-primary fa fa-edit",
+                          attrs: { "aria-hidden": "true" },
+                          on: {
+                            click: function($event) {
+                              _vm.openUpdate(key)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  : _vm._e()
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.currentTab === 1,
+                  expression: "currentTab === 1"
+                }
+              ],
+              staticClass: "container"
+            },
+            [
+              _vm._m(4),
+              _vm._v(" "),
+              _vm._m(5),
+              _vm._v(" "),
+              _vm._l(_vm.temp, function(item, key) {
+                return item.year == 2 && item.sem == 1
+                  ? _c("a", { staticClass: "panel-block " }, [
+                      _c("span", { staticClass: "column is-2" }, [
+                        _vm._v(
+                          "\n\n\t\t\t\t\t\t" +
+                            _vm._s(item.subject_code) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-3" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.descriptive_title) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.prerequisite) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.lec_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.lab_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.contact_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "panel-icon column is-1" }, [
+                        _c("i", {
+                          staticClass: "has-text-primary fa fa-edit",
+                          attrs: { "aria-hidden": "true" },
+                          on: {
+                            click: function($event) {
+                              _vm.openUpdate(key)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  : _vm._e()
+              }),
+              _vm._v(" "),
+              _vm._m(6),
+              _vm._v(" "),
+              _vm._m(7),
+              _vm._v(" "),
+              _vm._l(_vm.temp, function(item, key) {
+                return item.year == 2 && item.sem == 2
+                  ? _c("a", { staticClass: "panel-block " }, [
+                      _c("span", { staticClass: "column is-2" }, [
+                        _vm._v(
+                          "\n\n\t\t\t\t\t\t" +
+                            _vm._s(item.subject_code) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-3" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.descriptive_title) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.prerequisite) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.lec_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.lab_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.contact_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "panel-icon column is-1" }, [
+                        _c("i", {
+                          staticClass: "has-text-primary fa fa-edit",
+                          attrs: { "aria-hidden": "true" },
+                          on: {
+                            click: function($event) {
+                              _vm.openUpdate(key)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  : _vm._e()
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.currentTab === 2,
+                  expression: "currentTab === 2"
+                }
+              ],
+              staticClass: "container"
+            },
+            [
+              _vm._m(8),
+              _vm._v(" "),
+              _vm._m(9),
+              _vm._v(" "),
+              _vm._l(_vm.temp, function(item, key) {
+                return item.year == 3 && item.sem == 1
+                  ? _c("a", { staticClass: "panel-block " }, [
+                      _c("span", { staticClass: "column is-2" }, [
+                        _vm._v(
+                          "\n\n\t\t\t\t\t\t" +
+                            _vm._s(item.subject_code) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-3" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.descriptive_title) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.prerequisite) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.lec_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.lab_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.contact_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "panel-icon column is-1" }, [
+                        _c("i", {
+                          staticClass: "has-text-primary fa fa-edit",
+                          attrs: { "aria-hidden": "true" },
+                          on: {
+                            click: function($event) {
+                              _vm.openUpdate(key)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  : _vm._e()
+              }),
+              _vm._v(" "),
+              _vm._m(10),
+              _vm._v(" "),
+              _vm._m(11),
+              _vm._v(" "),
+              _vm._l(_vm.temp, function(item, key) {
+                return item.year == 3 && item.sem == 2
+                  ? _c("a", { staticClass: "panel-block " }, [
+                      _c("span", { staticClass: "column is-2" }, [
+                        _vm._v(
+                          "\n\n\t\t\t\t\t\t" +
+                            _vm._s(item.subject_code) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-3" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.descriptive_title) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.prerequisite) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.lec_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.lab_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.contact_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "panel-icon column is-1" }, [
+                        _c("i", {
+                          staticClass: "has-text-primary fa fa-edit",
+                          attrs: { "aria-hidden": "true" },
+                          on: {
+                            click: function($event) {
+                              _vm.openUpdate(key)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  : _vm._e()
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.currentTab === 3,
+                  expression: "currentTab === 3"
+                }
+              ],
+              staticClass: "container"
+            },
+            [
+              _vm._m(12),
+              _vm._v(" "),
+              _vm._m(13),
+              _vm._v(" "),
+              _vm._l(_vm.temp, function(item, key) {
+                return item.year == 4 && item.sem == 1
+                  ? _c("a", { staticClass: "panel-block " }, [
+                      _c("span", { staticClass: "column is-2" }, [
+                        _vm._v(
+                          "\n\n\t\t\t\t\t\t" +
+                            _vm._s(item.subject_code) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-3" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.descriptive_title) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.prerequisite) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.lec_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.lab_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.contact_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "panel-icon column is-1" }, [
+                        _c("i", {
+                          staticClass: "has-text-primary fa fa-edit",
+                          attrs: { "aria-hidden": "true" },
+                          on: {
+                            click: function($event) {
+                              _vm.openUpdate(key)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  : _vm._e()
+              }),
+              _vm._v(" "),
+              _vm._m(14),
+              _vm._v(" "),
+              _vm._m(15),
+              _vm._v(" "),
+              _vm._l(_vm.temp, function(item, key) {
+                return item.year == 4 && item.sem == 2
+                  ? _c("a", { staticClass: "panel-block " }, [
+                      _c("span", { staticClass: "column is-2" }, [
+                        _vm._v(
+                          "\n\n\t\t\t\t\t\t" +
+                            _vm._s(item.subject_code) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-3" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.descriptive_title) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.prerequisite) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.lec_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.lab_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(item.contact_hours) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "column is-1" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "panel-icon column is-1" }, [
+                        _c("i", {
+                          staticClass: "has-text-primary fa fa-edit",
+                          attrs: { "aria-hidden": "true" },
+                          on: {
+                            click: function($event) {
+                              _vm.openUpdate(key)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  : _vm._e()
+              })
+            ],
+            2
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("Add", {
+        attrs: { openmodal: _vm.addActive },
+        on: { closeRequest: _vm.close }
+      }),
+      _vm._v(" "),
+      _c("Show", {
+        attrs: { openmodal: _vm.showActive },
+        on: { closeRequest: _vm.close }
+      }),
+      _vm._v(" "),
+      _c("Update", {
+        attrs: { openmodal: _vm.updateActive },
+        on: { closeRequest: _vm.close }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "notification" }, [
+      _c("h3", [
+        _vm._v("First Year - "),
+        _c("strong", [_vm._v("1st Semester")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "panel-block" }, [
+      _c("span", { staticClass: "column is-2" }, [
+        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-3" }, [
+        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "notification" }, [
+      _c("h3", [
+        _vm._v("First Year - "),
+        _c("strong", [_vm._v("2nd Semester")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "panel-block" }, [
+      _c("span", { staticClass: "column is-2" }, [
+        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-3" }, [
+        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "notification" }, [
+      _c("h3", [
+        _vm._v("Second Year - "),
+        _c("strong", [_vm._v("1st Semester")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "panel-block" }, [
+      _c("span", { staticClass: "column is-2" }, [
+        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-3" }, [
+        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "notification" }, [
+      _c("h3", [
+        _vm._v("Second Year - "),
+        _c("strong", [_vm._v("2nd Semester")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "panel-block" }, [
+      _c("span", { staticClass: "column is-2" }, [
+        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-3" }, [
+        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "notification" }, [
+      _c("h3", [
+        _vm._v("Third Year - "),
+        _c("strong", [_vm._v("1st Semester")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "panel-block" }, [
+      _c("span", { staticClass: "column is-2" }, [
+        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-3" }, [
+        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "notification" }, [
+      _c("h3", [
+        _vm._v("Third Year - "),
+        _c("strong", [_vm._v("2nd Semester")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "panel-block" }, [
+      _c("span", { staticClass: "column is-2" }, [
+        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-3" }, [
+        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "notification" }, [
+      _c("h3", [
+        _vm._v("Fourth Year - "),
+        _c("strong", [_vm._v("1st Semester")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "panel-block" }, [
+      _c("span", { staticClass: "column is-2" }, [
+        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-3" }, [
+        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "notification" }, [
+      _c("h3", [
+        _vm._v("Fourth Year - "),
+        _c("strong", [_vm._v("2nd Semester")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "panel-block" }, [
+      _c("span", { staticClass: "column is-2" }, [
+        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-3" }, [
+        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "column is-1" }, [
+        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-14436ff6", module.exports)
+  }
+}
+
+/***/ }),
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var normalizeComponent = __webpack_require__(0)
@@ -46248,15 +48828,15 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 57 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(58)
+var __vue_script__ = __webpack_require__(67)
 /* template */
-var __vue_template__ = __webpack_require__(68)
+var __vue_template__ = __webpack_require__(77)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -46296,7 +48876,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 58 */
+/* 67 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -46368,9 +48948,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-var Add = __webpack_require__(59);
-var Show = __webpack_require__(62);
-var Update = __webpack_require__(65);
+var Add = __webpack_require__(68);
+var Show = __webpack_require__(71);
+var Update = __webpack_require__(74);
 /* harmony default export */ __webpack_exports__["default"] = ({
 	components: { Add: Add, Show: Show, Update: Update },
 	data: function data() {
@@ -46459,15 +49039,15 @@ var Update = __webpack_require__(65);
 });
 
 /***/ }),
-/* 59 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(60)
+var __vue_script__ = __webpack_require__(69)
 /* template */
-var __vue_template__ = __webpack_require__(61)
+var __vue_template__ = __webpack_require__(70)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -46507,7 +49087,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 60 */
+/* 69 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -46604,7 +49184,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 61 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -46841,15 +49421,15 @@ if (false) {
 }
 
 /***/ }),
-/* 62 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(63)
+var __vue_script__ = __webpack_require__(72)
 /* template */
-var __vue_template__ = __webpack_require__(64)
+var __vue_template__ = __webpack_require__(73)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -46889,7 +49469,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 63 */
+/* 72 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -46941,7 +49521,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 64 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -47048,15 +49628,15 @@ if (false) {
 }
 
 /***/ }),
-/* 65 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(66)
+var __vue_script__ = __webpack_require__(75)
 /* template */
-var __vue_template__ = __webpack_require__(67)
+var __vue_template__ = __webpack_require__(76)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -47096,7 +49676,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 66 */
+/* 75 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47190,7 +49770,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 67 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -47429,7 +50009,7 @@ if (false) {
 }
 
 /***/ }),
-/* 68 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -47648,15 +50228,15 @@ if (false) {
 }
 
 /***/ }),
-/* 69 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(70)
+var __vue_script__ = __webpack_require__(79)
 /* template */
-var __vue_template__ = __webpack_require__(77)
+var __vue_template__ = __webpack_require__(86)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -47696,7 +50276,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 70 */
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47713,9 +50293,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-var Add = __webpack_require__(11);
-var Show = __webpack_require__(12);
-var Update = __webpack_require__(13);
+var Add = __webpack_require__(14);
+var Show = __webpack_require__(15);
+var Update = __webpack_require__(16);
 /* harmony default export */ __webpack_exports__["default"] = ({
 	components: { Add: Add, Show: Show, Update: Update },
 	data: function data() {
@@ -47791,7 +50371,7 @@ var Update = __webpack_require__(13);
 });
 
 /***/ }),
-/* 71 */
+/* 80 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47875,7 +50455,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 72 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -48028,7 +50608,7 @@ if (false) {
 }
 
 /***/ }),
-/* 73 */
+/* 82 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48075,7 +50655,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 74 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -48159,7 +50739,7 @@ if (false) {
 }
 
 /***/ }),
-/* 75 */
+/* 84 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48238,7 +50818,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 76 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -48393,7 +50973,7 @@ if (false) {
 }
 
 /***/ }),
-/* 77 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -48432,7 +51012,7 @@ if (false) {
 }
 
 /***/ }),
-/* 78 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -48440,7 +51020,7 @@ var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(79)
+var __vue_template__ = __webpack_require__(88)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -48480,7 +51060,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 79 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -48517,15 +51097,15 @@ if (false) {
 }
 
 /***/ }),
-/* 80 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(81)
+var __vue_script__ = __webpack_require__(90)
 /* template */
-var __vue_template__ = __webpack_require__(86)
+var __vue_template__ = __webpack_require__(95)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -48565,7 +51145,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 81 */
+/* 90 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48622,9 +51202,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-var Add = __webpack_require__(14);
-var Show = __webpack_require__(12);
-var Update = __webpack_require__(15);
+var Add = __webpack_require__(17);
+var Show = __webpack_require__(15);
+var Update = __webpack_require__(18);
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: { Add: Add, Show: Show, Update: Update },
     data: function data() {
@@ -48705,7 +51285,7 @@ var Update = __webpack_require__(15);
 });
 
 /***/ }),
-/* 82 */
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48791,7 +51371,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 83 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -48955,7 +51535,7 @@ if (false) {
 }
 
 /***/ }),
-/* 84 */
+/* 93 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49038,7 +51618,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 85 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -49196,7 +51776,7 @@ if (false) {
 }
 
 /***/ }),
-/* 86 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -49357,15 +51937,15 @@ if (false) {
 }
 
 /***/ }),
-/* 87 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(88)
+var __vue_script__ = __webpack_require__(97)
 /* template */
-var __vue_template__ = __webpack_require__(98)
+var __vue_template__ = __webpack_require__(107)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -49405,7 +51985,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 88 */
+/* 97 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49479,10 +52059,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
-var Add = __webpack_require__(89);
-var Show = __webpack_require__(92);
-var Update = __webpack_require__(95);
+var Add = __webpack_require__(98);
+var Show = __webpack_require__(101);
+var Update = __webpack_require__(104);
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: { Add: Add, Show: Show, Update: Update },
     data: function data() {
@@ -49567,15 +52148,15 @@ var Update = __webpack_require__(95);
 });
 
 /***/ }),
-/* 89 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(90)
+var __vue_script__ = __webpack_require__(99)
 /* template */
-var __vue_template__ = __webpack_require__(91)
+var __vue_template__ = __webpack_require__(100)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -49615,36 +52196,11 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 90 */
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -49715,13 +52271,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				_this.close();
 
 				_this.$parent.lists.unshift(response.data[0]);
-				_this.$parent.lists.sort(function (a, b) {
-					if (a.name > b.name) {
-						return 1;
-					} else if (a.name < b.name) {
-						return -1;
-					}
-				});
+
 				_this.list = {
 					subject_code: '',
 					descriptive_title: '',
@@ -49739,7 +52289,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 91 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -49826,178 +52376,7 @@ var render = function() {
                 }
               }
             })
-          ]),
-          _vm._v(" "),
-          _vm.errors.name
-            ? _c("small", { staticClass: "has-text-danger" }, [
-                _vm._v(_vm._s(_vm.errors.name[0]))
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("label", { staticClass: "label" }, [_vm._v("Prerequisite")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.list.prerequisite,
-                  expression: "list.prerequisite"
-                }
-              ],
-              staticClass: "input",
-              class: { "is-danger": _vm.errors.name },
-              attrs: { type: "text", placeholder: "Prerequisite" },
-              domProps: { value: _vm.list.prerequisite },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.list, "prerequisite", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _vm.errors.name
-            ? _c("small", { staticClass: "has-text-danger" }, [
-                _vm._v(_vm._s(_vm.errors.name[0]))
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("label", { staticClass: "label" }, [_vm._v("Units")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.list.units,
-                  expression: "list.units"
-                }
-              ],
-              staticClass: "input",
-              class: { "is-danger": _vm.errors.name },
-              attrs: { type: "text", placeholder: "Units" },
-              domProps: { value: _vm.list.units },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.list, "units", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _vm.errors.name
-            ? _c("small", { staticClass: "has-text-danger" }, [
-                _vm._v(_vm._s(_vm.errors.name[0]))
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("label", { staticClass: "label" }, [_vm._v("Lecture Hours")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.list.lec_hours,
-                  expression: "list.lec_hours"
-                }
-              ],
-              staticClass: "input",
-              class: { "is-danger": _vm.errors.name },
-              attrs: { type: "text", placeholder: "Lecture Hours" },
-              domProps: { value: _vm.list.lec_hours },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.list, "lec_hours", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _vm.errors.name
-            ? _c("small", { staticClass: "has-text-danger" }, [
-                _vm._v(_vm._s(_vm.errors.name[0]))
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("label", { staticClass: "label" }, [_vm._v("Lab Hours")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.list.lab_hours,
-                  expression: "list.lab_hours"
-                }
-              ],
-              staticClass: "input",
-              class: { "is-danger": _vm.errors.name },
-              attrs: { type: "text", placeholder: "Lab Hours" },
-              domProps: { value: _vm.list.lab_hours },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.list, "lab_hours", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _vm.errors.name
-            ? _c("small", { staticClass: "has-text-danger" }, [
-                _vm._v(_vm._s(_vm.errors.name[0]))
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("label", { staticClass: "label" }, [_vm._v("Contact Hours")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.list.contact_hours,
-                  expression: "list.contact_hours"
-                }
-              ],
-              staticClass: "input",
-              class: { "is-danger": _vm.errors.name },
-              attrs: { type: "text", placeholder: "Contact Hours" },
-              domProps: { value: _vm.list.contact_hours },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.list, "contact_hours", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _vm.errors.name
-            ? _c("small", { staticClass: "has-text-danger" }, [
-                _vm._v(_vm._s(_vm.errors.name[0]))
-              ])
-            : _vm._e()
+          ])
         ])
       ]),
       _vm._v(" "),
@@ -50026,15 +52405,15 @@ if (false) {
 }
 
 /***/ }),
-/* 92 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(93)
+var __vue_script__ = __webpack_require__(102)
 /* template */
-var __vue_template__ = __webpack_require__(94)
+var __vue_template__ = __webpack_require__(103)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -50074,7 +52453,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 93 */
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -50136,7 +52515,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 94 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -50285,15 +52664,15 @@ if (false) {
 }
 
 /***/ }),
-/* 95 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(96)
+var __vue_script__ = __webpack_require__(105)
 /* template */
-var __vue_template__ = __webpack_require__(97)
+var __vue_template__ = __webpack_require__(106)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -50333,36 +52712,11 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 96 */
+/* 105 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -50421,13 +52775,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 			axios.patch('/subject/' + this.list.subject_id, this.$data.list).then(function (response) {
 
-				_this.$parent.lists.sort(function (a, b) {
-					if (a.name > b.name) {
-						return 1;
-					} else if (a.name < b.name) {
-						return -1;
-					}
-				});
 				_this.close();
 			}).catch(function (error) {
 				return _this.errors = error.response.data.errors;
@@ -50437,7 +52784,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 97 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -50526,178 +52873,7 @@ var render = function() {
                 }
               }
             })
-          ]),
-          _vm._v(" "),
-          _vm.errors.name
-            ? _c("small", { staticClass: "has-text-danger" }, [
-                _vm._v(_vm._s(_vm.errors.name[0]))
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("label", { staticClass: "label" }, [_vm._v("Prerequisite")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.list.prerequisite,
-                  expression: "list.prerequisite"
-                }
-              ],
-              staticClass: "input",
-              class: { "is-danger": _vm.errors.name },
-              attrs: { type: "text", placeholder: "Prerequisite" },
-              domProps: { value: _vm.list.prerequisite },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.list, "prerequisite", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _vm.errors.name
-            ? _c("small", { staticClass: "has-text-danger" }, [
-                _vm._v(_vm._s(_vm.errors.name[0]))
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("label", { staticClass: "label" }, [_vm._v("Units")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.list.units,
-                  expression: "list.units"
-                }
-              ],
-              staticClass: "input",
-              class: { "is-danger": _vm.errors.name },
-              attrs: { type: "text", placeholder: "Units" },
-              domProps: { value: _vm.list.units },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.list, "units", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _vm.errors.name
-            ? _c("small", { staticClass: "has-text-danger" }, [
-                _vm._v(_vm._s(_vm.errors.name[0]))
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("label", { staticClass: "label" }, [_vm._v("Lecture Hours")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.list.lec_hours,
-                  expression: "list.lec_hours"
-                }
-              ],
-              staticClass: "input",
-              class: { "is-danger": _vm.errors.name },
-              attrs: { type: "text", placeholder: "Lecture Hours" },
-              domProps: { value: _vm.list.lec_hours },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.list, "lec_hours", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _vm.errors.name
-            ? _c("small", { staticClass: "has-text-danger" }, [
-                _vm._v(_vm._s(_vm.errors.name[0]))
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("label", { staticClass: "label" }, [_vm._v("Lab Hours")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.list.lab_hours,
-                  expression: "list.lab_hours"
-                }
-              ],
-              staticClass: "input",
-              class: { "is-danger": _vm.errors.name },
-              attrs: { type: "text", placeholder: "Lab Hours" },
-              domProps: { value: _vm.list.lab_hours },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.list, "lab_hours", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _vm.errors.name
-            ? _c("small", { staticClass: "has-text-danger" }, [
-                _vm._v(_vm._s(_vm.errors.name[0]))
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _c("label", { staticClass: "label" }, [_vm._v("Contact Hours")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.list.contact_hours,
-                  expression: "list.contact_hours"
-                }
-              ],
-              staticClass: "input",
-              class: { "is-danger": _vm.errors.name },
-              attrs: { type: "text", placeholder: "Contact Hours" },
-              domProps: { value: _vm.list.contact_hours },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.list, "contact_hours", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _vm.errors.name
-            ? _c("small", { staticClass: "has-text-danger" }, [
-                _vm._v(_vm._s(_vm.errors.name[0]))
-              ])
-            : _vm._e()
+          ])
         ])
       ]),
       _vm._v(" "),
@@ -50726,7 +52902,7 @@ if (false) {
 }
 
 /***/ }),
-/* 98 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -50736,118 +52912,123 @@ var render = function() {
   return _c(
     "div",
     [
-      _c(
-        "nav",
-        { staticClass: "panel column is-offset-0 is-20" },
-        [
-          _c("p", { staticClass: "panel-heading" }, [
-            _vm._v("\n        Subjects - "),
-            _c("strong", [_vm._v(" Subject ")]),
+      _c("div", { staticClass: "container column is-offset-1 is-10" }, [
+        _c("div", { staticClass: "column is-half\nis-offset-one-quarter" }, [
+          _c("strong", [_vm._v(" Subjects ")]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "button is-primary is-outlined is-pulled-right",
+              on: { click: _vm.openAdd }
+            },
+            [_vm._v("\n          Add New\n      ")]
+          ),
+          _vm._v(" "),
+          _vm.loading
+            ? _c("span", { staticClass: "is-pulled-right" }, [
+                _c("i", { staticClass: "fa fa-refresh fa-spin fa-2x fa-fw" })
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "column is-half\nis-offset-one-quarter" }, [
+          _c("p", { staticClass: "control has-icons-left" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.searchQuery,
+                  expression: "searchQuery"
+                }
+              ],
+              staticClass: "input is-small",
+              attrs: { type: "text", placeholder: "search" },
+              domProps: { value: _vm.searchQuery },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.searchQuery = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm._m(0)
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "column is-half\nis-offset-one-quarter" }, [
+          _c("table", { staticClass: "table is-hoverable" }, [
+            _vm._m(1),
             _vm._v(" "),
             _c(
-              "button",
-              {
-                staticClass: "button is-primary is-outlined",
-                on: { click: _vm.openAdd }
-              },
-              [_vm._v("\n          Add New\n        ")]
-            ),
-            _vm._v(" "),
-            _vm.loading
-              ? _c("span", { staticClass: "is-pulled-right" }, [
-                  _c("i", { staticClass: "fa fa-refresh fa-spin fa-2x fa-fw" })
+              "tbody",
+              _vm._l(_vm.temp, function(item, key) {
+                return _c("tr", [
+                  _c("td", [
+                    _c("a", [
+                      _c("span", [
+                        _c("i", {
+                          staticClass: "has-text-danger fa fa-trash",
+                          attrs: { "aria-hidden": "true" },
+                          on: {
+                            click: function($event) {
+                              _vm.del(key, item.subject_id)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c("a", [
+                      _c("span", [
+                        _c("i", {
+                          staticClass: "has-text-info fa fa-edit",
+                          attrs: { "aria-hidden": "true" },
+                          on: {
+                            click: function($event) {
+                              _vm.openUpdate(key)
+                            }
+                          }
+                        })
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    {
+                      on: {
+                        click: function($event) {
+                          _vm.openUpdate(key)
+                        }
+                      }
+                    },
+                    [_vm._v(_vm._s(item.subject_code))]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    {
+                      on: {
+                        click: function($event) {
+                          _vm.openUpdate(key)
+                        }
+                      }
+                    },
+                    [_vm._v(_vm._s(item.descriptive_title))]
+                  )
                 ])
-              : _vm._e()
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "panel-block" }, [
-            _c("p", { staticClass: "control has-icons-left" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.searchQuery,
-                    expression: "searchQuery"
-                  }
-                ],
-                staticClass: "input is-small",
-                attrs: { type: "text", placeholder: "search" },
-                domProps: { value: _vm.searchQuery },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.searchQuery = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _vm._m(0)
-            ])
-          ]),
-          _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
-          _vm._l(_vm.temp, function(item, key) {
-            return _c("a", { staticClass: "panel-block " }, [
-              _c("span", { staticClass: "column is-2" }, [
-                _vm._v("\n        " + _vm._s(item.subject_code) + "\n    ")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "column is-4" }, [
-                _vm._v("\n        " + _vm._s(item.descriptive_title) + "\n    ")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "column is-2" }, [
-                _vm._v("\n        " + _vm._s(item.prerequisite) + "\n    ")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "column is-1" }, [
-                _vm._v("\n        " + _vm._s(item.units) + "\n    ")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "panel-icon column is-1" }, [
-                _c("i", {
-                  staticClass: "has-text-danger fa fa-trash",
-                  attrs: { "aria-hidden": "true" },
-                  on: {
-                    click: function($event) {
-                      _vm.del(key, item.subject_id)
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "panel-icon column is-1" }, [
-                _c("i", {
-                  staticClass: "has-text-info fa fa-edit",
-                  attrs: { "aria-hidden": "true" },
-                  on: {
-                    click: function($event) {
-                      _vm.openUpdate(key)
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "panel-icon column is-1" }, [
-                _c("i", {
-                  staticClass: "has-text-primary fa fa-eye",
-                  attrs: { "aria-hidden": "true" },
-                  on: {
-                    click: function($event) {
-                      _vm.openShow(key)
-                    }
-                  }
-                })
-              ])
-            ])
-          })
-        ],
-        2
-      ),
+              })
+            )
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c("Add", {
         attrs: { openmodal: _vm.addActive },
@@ -50880,21 +53061,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n        Subject Code\n    ")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-4" }, [
-        _vm._v("\n        Descriptive Title\n    ")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n        Prerequisite\n    ")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n        Units\n    ")
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Subject Code")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Descriptive Title")])
       ])
     ])
   }
@@ -50909,15 +53082,15 @@ if (false) {
 }
 
 /***/ }),
-/* 99 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(100)
+var __vue_script__ = __webpack_require__(109)
 /* template */
-var __vue_template__ = __webpack_require__(110)
+var __vue_template__ = __webpack_require__(119)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -50957,7 +53130,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 100 */
+/* 109 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51017,9 +53190,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-var Add = __webpack_require__(101);
-var Show = __webpack_require__(104);
-var Update = __webpack_require__(107);
+var Add = __webpack_require__(110);
+var Show = __webpack_require__(113);
+var Update = __webpack_require__(116);
 /* harmony default export */ __webpack_exports__["default"] = ({
 	components: { Add: Add, Show: Show, Update: Update },
 	data: function data() {
@@ -51095,15 +53268,15 @@ var Update = __webpack_require__(107);
 });
 
 /***/ }),
-/* 101 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(102)
+var __vue_script__ = __webpack_require__(111)
 /* template */
-var __vue_template__ = __webpack_require__(103)
+var __vue_template__ = __webpack_require__(112)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -51143,7 +53316,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 102 */
+/* 111 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51219,7 +53392,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 103 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -51335,15 +53508,15 @@ if (false) {
 }
 
 /***/ }),
-/* 104 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(105)
+var __vue_script__ = __webpack_require__(114)
 /* template */
-var __vue_template__ = __webpack_require__(106)
+var __vue_template__ = __webpack_require__(115)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -51383,7 +53556,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 105 */
+/* 114 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51431,7 +53604,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 106 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -51502,15 +53675,15 @@ if (false) {
 }
 
 /***/ }),
-/* 107 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(108)
+var __vue_script__ = __webpack_require__(117)
 /* template */
-var __vue_template__ = __webpack_require__(109)
+var __vue_template__ = __webpack_require__(118)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -51550,7 +53723,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 108 */
+/* 117 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51620,7 +53793,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 109 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -51738,7 +53911,7 @@ if (false) {
 }
 
 /***/ }),
-/* 110 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -51902,15 +54075,15 @@ if (false) {
 }
 
 /***/ }),
-/* 111 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(112)
+var __vue_script__ = __webpack_require__(121)
 /* template */
-var __vue_template__ = __webpack_require__(116)
+var __vue_template__ = __webpack_require__(125)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -51950,7 +54123,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 112 */
+/* 121 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52013,9 +54186,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-var Add = __webpack_require__(14);
-var Show = __webpack_require__(113);
-var Update = __webpack_require__(15);
+var Add = __webpack_require__(17);
+var Show = __webpack_require__(122);
+var Update = __webpack_require__(18);
 /* harmony default export */ __webpack_exports__["default"] = ({
 	components: { Add: Add, Show: Show, Update: Update },
 	data: function data() {
@@ -52096,15 +54269,15 @@ var Update = __webpack_require__(15);
 });
 
 /***/ }),
-/* 113 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(114)
+var __vue_script__ = __webpack_require__(123)
 /* template */
-var __vue_template__ = __webpack_require__(115)
+var __vue_template__ = __webpack_require__(124)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -52144,7 +54317,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 114 */
+/* 123 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52195,7 +54368,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 115 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -52279,7 +54452,7 @@ if (false) {
 }
 
 /***/ }),
-/* 116 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -52444,15 +54617,15 @@ if (false) {
 }
 
 /***/ }),
-/* 117 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(118)
+var __vue_script__ = __webpack_require__(127)
 /* template */
-var __vue_template__ = __webpack_require__(128)
+var __vue_template__ = __webpack_require__(137)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -52492,7 +54665,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 118 */
+/* 127 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52566,9 +54739,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-var Add = __webpack_require__(119);
-var Show = __webpack_require__(122);
-var Update = __webpack_require__(125);
+var Add = __webpack_require__(128);
+var Show = __webpack_require__(131);
+var Update = __webpack_require__(134);
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: { Add: Add, Show: Show, Update: Update },
     data: function data() {
@@ -52651,15 +54824,15 @@ var Update = __webpack_require__(125);
 });
 
 /***/ }),
-/* 119 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(120)
+var __vue_script__ = __webpack_require__(129)
 /* template */
-var __vue_template__ = __webpack_require__(121)
+var __vue_template__ = __webpack_require__(130)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -52699,7 +54872,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 120 */
+/* 129 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52779,7 +54952,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 121 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -52902,15 +55075,15 @@ if (false) {
 }
 
 /***/ }),
-/* 122 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(123)
+var __vue_script__ = __webpack_require__(132)
 /* template */
-var __vue_template__ = __webpack_require__(124)
+var __vue_template__ = __webpack_require__(133)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -52950,7 +55123,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 123 */
+/* 132 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52999,7 +55172,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 124 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -53070,15 +55243,15 @@ if (false) {
 }
 
 /***/ }),
-/* 125 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(126)
+var __vue_script__ = __webpack_require__(135)
 /* template */
-var __vue_template__ = __webpack_require__(127)
+var __vue_template__ = __webpack_require__(136)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -53118,7 +55291,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 126 */
+/* 135 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -53182,13 +55355,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 			axios.patch('/curriculum/' + this.list.curriculum_id, this.$data.list).then(function (response) {
 
-				_this.$parent.lists.sort(function (a, b) {
-					if (a.name > b.name) {
-						return 1;
-					} else if (a.name < b.name) {
-						return -1;
-					}
-				});
 				_this.close();
 			}).catch(function (error) {
 				return _this.errors = error.response.data.errors;
@@ -53198,7 +55364,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 127 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -53329,7 +55495,7 @@ if (false) {
 }
 
 /***/ }),
-/* 128 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -53530,15 +55696,15 @@ if (false) {
 }
 
 /***/ }),
-/* 129 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(130)
+var __vue_script__ = __webpack_require__(139)
 /* template */
-var __vue_template__ = __webpack_require__(135)
+var __vue_template__ = __webpack_require__(140)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -53578,11 +55744,22 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 130 */
+/* 139 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+var _computed;
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
 //
 //
 //
@@ -54126,9 +56303,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-var Add = __webpack_require__(16);
-var Show = __webpack_require__(17);
-var Update = __webpack_require__(13);
+var Add = __webpack_require__(4);
+var Show = __webpack_require__(5);
+var Update = __webpack_require__(154);
 /* harmony default export */ __webpack_exports__["default"] = ({
 	name: 'tabs',
 	components: { Add: Add, Show: Show, Update: Update },
@@ -54145,7 +56322,7 @@ var Update = __webpack_require__(13);
 			searchQuery: '',
 			temp: '',
 			subjects: '',
-			year: ''
+			notes: {}
 		};
 	},
 
@@ -54166,7 +56343,92 @@ var Update = __webpack_require__(13);
 				this.temp = this.lists;
 			}
 		}
-	},
+	}, computed: (_computed = {
+		calculateLecHours: function calculateLecHours() {
+			return function (year, sem) {
+				var total = [];
+
+				Object.entries(this.temp).forEach(function (_ref) {
+					var _ref2 = _slicedToArray(_ref, 2),
+					    key = _ref2[0],
+					    val = _ref2[1];
+
+					if (val.year == year && val.sem == sem) total.push(val.lec_hours);
+					alert(val.lec_hours); // the value of the current key.
+				});
+
+				return total.reduce(function (total, num) {
+					return Number(total) + Number(num);
+				}, 0);
+			};
+		},
+		calculateUnits: function calculateUnits() {
+			return function (year, sem) {
+				var total = [];
+
+				Object.entries(this.temp).forEach(function (_ref3) {
+					var _ref4 = _slicedToArray(_ref3, 2),
+					    key = _ref4[0],
+					    val = _ref4[1];
+
+					if (val.year == year && val.sem == sem) total.push(val.units); // the value of the current key.
+				});
+
+				return total.reduce(function (total, num) {
+					return Number(total) + Number(num);
+				}, 0);
+			};
+		}
+	}, _defineProperty(_computed, 'calculateLecHours', function calculateLecHours() {
+		return function (year, sem) {
+			var total = [];
+
+			Object.entries(this.temp).forEach(function (_ref5) {
+				var _ref6 = _slicedToArray(_ref5, 2),
+				    key = _ref6[0],
+				    val = _ref6[1];
+
+				if (val.year == year && val.sem == sem) total.push(val.lec_hours); // the value of the current key.
+			});
+
+			return total.reduce(function (total, num) {
+				return Number(total) + Number(num);
+			}, 0);
+		};
+	}), _defineProperty(_computed, 'calculateLabHours', function calculateLabHours() {
+		return function (year, sem) {
+			var total = [];
+
+			Object.entries(this.temp).forEach(function (_ref7) {
+				var _ref8 = _slicedToArray(_ref7, 2),
+				    key = _ref8[0],
+				    val = _ref8[1];
+
+				if (val.year == year && val.sem == sem) total.push(val.lab_hours); // the value of the current key.
+			});
+
+			return total.reduce(function (total, num) {
+				return Number(total) + Number(num);
+			}, 0);
+		};
+	}), _defineProperty(_computed, 'calculateContactHours', function calculateContactHours() {
+		return function (year, sem) {
+			var total = [];
+
+			Object.entries(this.temp).forEach(function (_ref9) {
+				var _ref10 = _slicedToArray(_ref9, 2),
+				    key = _ref10[0],
+				    val = _ref10[1];
+
+				if (val.year == year && val.sem == sem) total.push(val.contact_hours); // the value of the current key.
+			});
+
+			return total.reduce(function (total, num) {
+				return Number(total) + Number(num);
+			}, 0);
+		};
+	}), _computed),
+
 	mounted: function mounted() {
 		var _this2 = this;
 
@@ -54219,371 +56481,7 @@ var Update = __webpack_require__(13);
 });
 
 /***/ }),
-/* 131 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-
-	props: ['openmodal'],
-	data: function data() {
-		return {
-			list: {
-				subject_id: '',
-				department_id: '',
-				year: '',
-				sem: '',
-				course_id: '',
-				subject_key: ''
-
-			},
-			subject: {},
-			errors: {}
-		};
-	},
-
-	methods: {
-		close: function close() {
-			this.$emit('closeRequest');
-		},
-		save: function save() {
-			var _this = this;
-
-			this.$data.list.subject_id = this.$data.subject[this.$data.list.subject_key].subject_id;
-			axios.post('/curriculumsubject/store', this.$data.list).then(function (response) {
-				console.log(response);
-
-				_this.close();
-				_this.$parent.lists.push(response.data[0]);
-
-				_this.subject.splice(_this.list.subject_key, 1);
-				_this.list = {};
-			}).catch(function (error) {
-				return _this.errors = error.response.data.errors;
-			});
-		}
-	}
-});
-
-/***/ }),
-/* 132 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "modal", class: _vm.openmodal }, [
-    _c("div", { staticClass: "modal-background" }),
-    _vm._v(" "),
-    _c("div", { staticClass: "modal-card" }, [
-      _c("header", { staticClass: "modal-card-head" }, [
-        _c("p", { staticClass: "modal-card-title" }, [_vm._v("Add New Entry")]),
-        _vm._v(" "),
-        _c("button", {
-          staticClass: "delete",
-          attrs: { "aria-label": "close" },
-          on: { click: _vm.close }
-        })
-      ]),
-      _vm._v(" "),
-      _c("section", { staticClass: "modal-card-body" }, [
-        _c("div", { staticClass: "field" }, [
-          _c("label", { staticClass: "label" }, [_vm._v("Subject")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "select" }, [
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.list.subject_key,
-                    expression: "list.subject_key"
-                  }
-                ],
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.$set(
-                      _vm.list,
-                      "subject_key",
-                      $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-                    )
-                  }
-                }
-              },
-              _vm._l(_vm.subject, function(sub, key) {
-                return _c("option", { domProps: { value: key } }, [
-                  _vm._v("\n\t\t\t\t\t\t" + _vm._s(sub.descriptive_title))
-                ])
-              })
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("footer", { staticClass: "modal-card-foot" }, [
-        _c(
-          "button",
-          { staticClass: "button is-success", on: { click: _vm.save } },
-          [_vm._v("Add")]
-        ),
-        _vm._v(" "),
-        _c("button", { staticClass: "button", on: { click: _vm.close } }, [
-          _vm._v("Cancel")
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-349d8c5e", module.exports)
-  }
-}
-
-/***/ }),
-/* 133 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-	props: ['openmodal'],
-	data: function data() {
-		return {
-			list: ''
-		};
-	},
-
-	methods: {
-		close: function close() {
-			this.$emit('closeRequest');
-		}
-	}
-});
-
-/***/ }),
-/* 134 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "modal", class: _vm.openmodal }, [
-    _c("div", { staticClass: "modal-background" }),
-    _vm._v(" "),
-    _c("div", { staticClass: "modal-card" }, [
-      _c("header", { staticClass: "modal-card-head" }, [
-        _c("p", { staticClass: "modal-card-title" }, [
-          _vm._v(_vm._s(_vm.list.descriptive_title) + "'s Details")
-        ]),
-        _vm._v(" "),
-        _c("button", {
-          staticClass: "delete",
-          attrs: { "aria-label": "close" },
-          on: { click: _vm.close }
-        })
-      ]),
-      _vm._v(" "),
-      _c("section", { staticClass: "modal-card-body" }, [
-        _c("li", { staticClass: "panel-block" }, [
-          _vm._m(0),
-          _vm._v(" " + _vm._s(_vm.list.subject_code) + "\n\t\t\t")
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "panel-block" }, [
-          _vm._m(1),
-          _vm._v(" " + _vm._s(_vm.list.descriptive_title) + "\n\t\t\t")
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "panel-block" }, [
-          _vm._m(2),
-          _vm._v(" " + _vm._s(_vm.list.prerequisite) + "\n\t\t\t")
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "panel-block" }, [
-          _vm._m(3),
-          _vm._v(" " + _vm._s(_vm.list.units) + "\n\t\t\t")
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "panel-block" }, [
-          _vm._m(4),
-          _vm._v(" " + _vm._s(_vm.list.lec_hours) + "\n\t\t\t")
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "panel-block" }, [
-          _vm._m(5),
-          _vm._v(" " + _vm._s(_vm.list.lab_hours) + "\n\t\t\t")
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "panel-block" }, [
-          _vm._m(6),
-          _vm._v(" " + _vm._s(_vm.list.contact_hours) + "\n\t\t\t")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("footer", { staticClass: "modal-card-foot" }, [
-        _c("button", { staticClass: "button", on: { click: _vm.close } }, [
-          _vm._v("Cancel")
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { staticClass: "column is-3" }, [
-      _c("b", [_vm._v("Subject Code")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { staticClass: "column is-3" }, [
-      _c("b", [_vm._v("Descriptive Title")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { staticClass: "column is-3" }, [
-      _c("b", [_vm._v("Prerequisite")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { staticClass: "column is-3" }, [
-      _c("b", [_vm._v("Units")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { staticClass: "column is-3" }, [
-      _c("b", [_vm._v("Lecture Hours")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { staticClass: "column is-3" }, [
-      _c("b", [_vm._v("Lab Hours")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { staticClass: "column is-3" }, [
-      _c("b", [_vm._v("Contact Hours")])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-088d62fd", module.exports)
-  }
-}
-
-/***/ }),
-/* 135 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -54593,23 +56491,32 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("nav", { staticClass: "panel block" }, [
-        _c("p", { staticClass: "panel-heading" }, [
-          _vm._v(
-            "\n\t\t\tCurriculum " +
-              _vm._s(this.$route.params.course) +
-              " " +
-              _vm._s(this.$route.params.year) +
-              "\n\t\t\t\n\t\t\t"
-          ),
-          _vm.loading
-            ? _c("span", { staticClass: "is-pulled-right" }, [
-                _c("i", { staticClass: "fa fa-refresh fa-spin fa-2x fa-fw" })
-              ])
-            : _vm._e()
-        ]),
+      _c("div", { staticClass: "container column is-11" }, [
+        _c(
+          "div",
+          {
+            staticClass: "column column is-half\n\t\t\tis-offset-one-quarter "
+          },
+          [
+            _c("strong", [
+              _vm._v(
+                " Curriculum " +
+                  _vm._s(this.$route.params.course) +
+                  " " +
+                  _vm._s(this.$route.params.year) +
+                  " "
+              )
+            ]),
+            _vm._v(" "),
+            _vm.loading
+              ? _c("span", { staticClass: "is-pulled-right" }, [
+                  _c("i", { staticClass: "fa fa-refresh fa-spin fa-2x fa-fw" })
+                ])
+              : _vm._e()
+          ]
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "panel-block" }, [
+        _c("div", { staticClass: "column is-11" }, [
           _c("div", { staticClass: "tabs is-medium" }, [
             _c(
               "div",
@@ -54633,923 +56540,1757 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "panel" }, [
-          _c(
-            "div",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.currentTab === 0,
-                  expression: "currentTab === 0"
-                }
-              ],
-              staticClass: "container"
-            },
-            [
-              _c("div", { staticClass: "notification" }, [
-                _c("h3", [
-                  _vm._v("First Year - "),
-                  _c("strong", [_vm._v("1st Semester")]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "button is-primary is-outlined",
-                      on: {
-                        click: function($event) {
-                          _vm.openAdd(1, 1)
-                        }
-                      }
-                    },
-                    [_vm._v("\n\t\t\t\t\t\t\tAdd New\n\t\t\t\t\t\t")]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _vm._m(0),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 1 && item.sem == 1
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openShow(key)
-                            }
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-danger fa fa-times",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.del(key, item.curriculumsubject_id)
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "notification" }, [
-                _c("h3", [
-                  _vm._v("First Year - "),
-                  _c("strong", [_vm._v("2nd Semester")]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "button is-primary is-outlined",
-                      on: {
-                        click: function($event) {
-                          _vm.openAdd(1, 2)
-                        }
-                      }
-                    },
-                    [_vm._v("\n\t\t\t\t\t\t\tAdd New\n\t\t\t\t\t\t")]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 1 && item.sem == 2
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openShow(key)
-                            }
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-danger fa fa-times",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.del(key, item.curriculumsubject_id)
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              })
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.currentTab === 0,
+                expression: "currentTab === 0"
+              }
             ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              directives: [
+            staticClass: "column is-11"
+          },
+          [
+            _c("h3", [
+              _vm._v("First Year - "),
+              _c("strong", [_vm._v("1st Semester")]),
+              _vm._v(" "),
+              _c(
+                "button",
                 {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.currentTab === 1,
-                  expression: "currentTab === 1"
-                }
-              ],
-              staticClass: "container"
-            },
-            [
-              _c("div", { staticClass: "notification" }, [
-                _c("h3", [
-                  _vm._v("Second Year - "),
-                  _c("strong", [_vm._v("1st Semester")]),
+                  staticClass: "button is-primary is-outlined is-pulled-right",
+                  on: {
+                    click: function($event) {
+                      _vm.openAdd(1, 1)
+                    }
+                  }
+                },
+                [_vm._v("\n\t\t\t\t\tAdd New\n\t\t\t\t")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table is-hoverable" }, [
+              _c("thead", [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", { attrs: { colspan: "2" } }),
                   _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "button is-primary is-outlined",
-                      on: {
-                        click: function($event) {
-                          _vm.openAdd(2, 1)
-                        }
-                      }
-                    },
-                    [_vm._v("\n\t\t\t\t\t\t\tAdd New\n\t\t\t\t\t\t")]
-                  )
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateUnits(1, 1)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateLecHours(1, 1)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateLabHours(1, 1)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateContactHours(1, 1)))
+                    ])
+                  ])
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(2),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 2 && item.sem == 1
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openShow(key)
+              _c(
+                "tbody",
+                _vm._l(_vm.temp, function(item, key) {
+                  return item.year == 1 && item.sem == 1
+                    ? _c("tr", [
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-edit",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openUpdate(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-danger fa fa-times",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.del(key, item.curriculumsubject_id)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
                             }
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-danger fa fa-times",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.del(key, item.curriculumsubject_id)
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.subject_code))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
                             }
-                          }
-                        })
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.descriptive_title))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.prerequisite))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.units) + " ")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.lec_hours) + " ")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.lab_hours))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.contact_hours))
+                            ])
+                          ]
+                        )
                       ])
-                    ])
-                  : _vm._e()
-              }),
+                    : _vm._e()
+                })
+              )
+            ]),
+            _vm._v(" "),
+            _c("h3", [
+              _vm._v("First Year - "),
+              _c("strong", [_vm._v("2nd Semester")]),
               _vm._v(" "),
-              _c("div", { staticClass: "notification" }, [
-                _c("h3", [
-                  _vm._v("Second Year - "),
-                  _c("strong", [_vm._v("2nd Semester")]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "button is-primary is-outlined",
-                      on: {
-                        click: function($event) {
-                          _vm.openAdd(2, 2)
-                        }
-                      }
-                    },
-                    [_vm._v("\n\t\t\t\t\t\t\tAdd New\n\t\t\t\t\t\t")]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _vm._m(3),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 2 && item.sem == 2
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openShow(key)
-                            }
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-danger fa fa-times",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.del(key, item.curriculumsubject_id)
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              })
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              directives: [
+              _c(
+                "button",
                 {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.currentTab === 2,
-                  expression: "currentTab === 2"
-                }
-              ],
-              staticClass: "container"
-            },
-            [
-              _c("div", { staticClass: "notification" }, [
-                _c("h3", [
-                  _vm._v("Third Year - "),
-                  _c("strong", [_vm._v("1st Semester")]),
+                  staticClass: "button is-primary is-outlined is-pulled-right",
+                  on: {
+                    click: function($event) {
+                      _vm.openAdd(1, 1)
+                    }
+                  }
+                },
+                [_vm._v("\n\t\t\t\t\tAdd New\n\t\t\t\t")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table is-hoverable" }, [
+              _c("thead", [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", { attrs: { colspan: "2" } }),
                   _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "button is-primary is-outlined",
-                      on: {
-                        click: function($event) {
-                          _vm.openAdd(3, 1)
-                        }
-                      }
-                    },
-                    [_vm._v("\n\t\t\t\t\t\t\tAdd New\n\t\t\t\t\t\t")]
-                  )
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateUnits(1, 2)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateLecHours(1, 2)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateLabHours(1, 2)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateContactHours(1, 2)))
+                    ])
+                  ])
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(4),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 3 && item.sem == 1
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openShow(key)
+              _c(
+                "tbody",
+                _vm._l(_vm.temp, function(item, key) {
+                  return item.year == 1 && item.sem == 2
+                    ? _c("tr", [
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-edit",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openUpdate(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-danger fa fa-times",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.del(key, item.curriculumsubject_id)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
                             }
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-danger fa fa-times",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.del(key, item.curriculumsubject_id)
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.subject_code))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
                             }
-                          }
-                        })
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.descriptive_title))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.prerequisite))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.units) + " ")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.lec_hours) + " ")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.lab_hours))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.contact_hours))
+                            ])
+                          ]
+                        )
                       ])
-                    ])
-                  : _vm._e()
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "notification" }, [
-                _c("h3", [
-                  _vm._v("Third Year - "),
-                  _c("strong", [_vm._v("2nd Semester")]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "button is-primary is-outlined",
-                      on: {
-                        click: function($event) {
-                          _vm.openAdd(3, 2)
-                        }
-                      }
-                    },
-                    [_vm._v("\n\t\t\t\t\t\t\tAdd New\n\t\t\t\t\t\t")]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _vm._m(5),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 3 && item.sem == 2
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openShow(key)
-                            }
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-danger fa fa-times",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.del(key, item.curriculumsubject_id)
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              })
+                    : _vm._e()
+                })
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.currentTab === 1,
+                expression: "currentTab === 1"
+              }
             ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              directives: [
+            staticClass: "column is-11"
+          },
+          [
+            _c("h3", [
+              _vm._v("Second Year - "),
+              _c("strong", [_vm._v("1st Semester")]),
+              _vm._v(" "),
+              _c(
+                "button",
                 {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.currentTab === 3,
-                  expression: "currentTab === 3"
-                }
-              ],
-              staticClass: "container"
-            },
-            [
-              _c("div", { staticClass: "notification" }, [
-                _c("h3", [
-                  _vm._v("Fourth Year - "),
-                  _c("strong", [_vm._v("1st Semester")]),
+                  staticClass: "button is-primary is-outlined is-pulled-right",
+                  on: {
+                    click: function($event) {
+                      _vm.openAdd(2, 1)
+                    }
+                  }
+                },
+                [_vm._v("\n\t\t\t\t\tAdd New\n\t\t\t\t")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table is-hoverable" }, [
+              _c("thead", [
+                _vm._m(2),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", { attrs: { colspan: "2" } }),
                   _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "button is-primary is-outlined",
-                      on: {
-                        click: function($event) {
-                          _vm.openAdd(4, 1)
-                        }
-                      }
-                    },
-                    [_vm._v("\n\t\t\t\t\t\t\tAdd New\n\t\t\t\t\t\t")]
-                  )
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateUnits(2, 1)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateLecHours(2, 1)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateLabHours(2, 1)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateContactHours(2, 1)))
+                    ])
+                  ])
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(6),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 4 && item.sem == 1
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openShow(key)
+              _c(
+                "tbody",
+                _vm._l(_vm.temp, function(item, key) {
+                  return item.year == 2 && item.sem == 1
+                    ? _c("tr", [
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-edit",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openUpdate(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-danger fa fa-times",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.del(key, item.curriculumsubject_id)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
                             }
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-danger fa fa-times",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.del(key, item.curriculumsubject_id)
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.subject_code))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
                             }
-                          }
-                        })
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.descriptive_title))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.prerequisite))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.units) + " ")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.lec_hours) + " ")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.lab_hours))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.contact_hours))
+                            ])
+                          ]
+                        )
                       ])
-                    ])
-                  : _vm._e()
-              }),
+                    : _vm._e()
+                })
+              )
+            ]),
+            _vm._v(" "),
+            _c("h3", [
+              _vm._v("Second Year - "),
+              _c("strong", [_vm._v("2nd Semester")]),
               _vm._v(" "),
-              _c("div", { staticClass: "notification" }, [
-                _c("h3", [
-                  _vm._v("Fourth Year - "),
-                  _c("strong", [_vm._v("2nd Semester")]),
+              _c(
+                "button",
+                {
+                  staticClass: "button is-primary is-outlined is-pulled-right",
+                  on: {
+                    click: function($event) {
+                      _vm.openAdd(2, 2)
+                    }
+                  }
+                },
+                [_vm._v("\n\t\t\t\t\tAdd New\n\t\t\t\t")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table is-hoverable" }, [
+              _c("thead", [
+                _vm._m(3),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", { attrs: { colspan: "2" } }),
                   _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "button is-primary is-outlined",
-                      on: {
-                        click: function($event) {
-                          _vm.openAdd(4, 2)
-                        }
-                      }
-                    },
-                    [_vm._v("\n\t\t\t\t\t\t\tAdd New\n\t\t\t\t\t\t")]
-                  )
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateUnits(2, 2)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateLecHours(2, 2)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateLabHours(2, 2)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateContactHours(2, 2)))
+                    ])
+                  ])
                 ])
               ]),
               _vm._v(" "),
-              _vm._m(7),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 4 && item.sem == 2
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openShow(key)
+              _c(
+                "tbody",
+                _vm._l(_vm.temp, function(item, key) {
+                  return item.year == 2 && item.sem == 2
+                    ? _c("tr", [
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-edit",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openUpdate(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-danger fa fa-times",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.del(key, item.curriculumsubject_id)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
                             }
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-danger fa fa-times",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.del(key, item.curriculumsubject_id)
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.subject_code))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
                             }
-                          }
-                        })
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.descriptive_title))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.prerequisite))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.units) + " ")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.lec_hours) + " ")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.lab_hours))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.contact_hours))
+                            ])
+                          ]
+                        )
                       ])
-                    ])
-                  : _vm._e()
-              })
+                    : _vm._e()
+                })
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.currentTab === 2,
+                expression: "currentTab === 2"
+              }
             ],
-            2
-          )
-        ])
+            staticClass: "column is-11"
+          },
+          [
+            _c("h3", [
+              _vm._v("Third Year - "),
+              _c("strong", [_vm._v("1st Semester")]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "button is-primary is-outlined is-pulled-right",
+                  on: {
+                    click: function($event) {
+                      _vm.openAdd(3, 1)
+                    }
+                  }
+                },
+                [_vm._v("\n\t\t\t\t\tAdd New\n\t\t\t\t")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table is-hoverable" }, [
+              _c("thead", [
+                _vm._m(4),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", { attrs: { colspan: "2" } }),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateUnits(3, 1)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateLecHours(3, 1)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateLabHours(3, 1)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateContactHours(3, 1)))
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.temp, function(item, key) {
+                  return item.year == 3 && item.sem == 1
+                    ? _c("tr", [
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-edit",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openUpdate(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-danger fa fa-times",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.del(key, item.curriculumsubject_id)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.subject_code))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.descriptive_title))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.prerequisite))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.units) + " ")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.lec_hours) + " ")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.lab_hours))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.contact_hours))
+                            ])
+                          ]
+                        )
+                      ])
+                    : _vm._e()
+                })
+              )
+            ]),
+            _vm._v(" "),
+            _c("h3", [
+              _vm._v("Third Year - "),
+              _c("strong", [_vm._v("2nd Semester")]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "button is-primary is-outlined is-pulled-right",
+                  on: {
+                    click: function($event) {
+                      _vm.openAdd(3, 2)
+                    }
+                  }
+                },
+                [_vm._v("\n\t\t\t\t\tAdd New\n\t\t\t\t")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table is-hoverable" }, [
+              _c("thead", [
+                _vm._m(5),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", { attrs: { colspan: "2" } }),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateUnits(3, 2)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateLecHours(3, 2)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateLabHours(3, 2)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateContactHours(3, 2)))
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.temp, function(item, key) {
+                  return item.year == 3 && item.sem == 2
+                    ? _c("tr", [
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-edit",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openUpdate(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-danger fa fa-times",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.del(key, item.curriculumsubject_id)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.subject_code))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.descriptive_title))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.prerequisite))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.units) + " ")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.lec_hours) + " ")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.lab_hours))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.contact_hours))
+                            ])
+                          ]
+                        )
+                      ])
+                    : _vm._e()
+                })
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.currentTab === 3,
+                expression: "currentTab === 3"
+              }
+            ],
+            staticClass: "column is-11"
+          },
+          [
+            _c("h3", [
+              _vm._v("Fourth Year - "),
+              _c("strong", [_vm._v("1st Semester")]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "button is-primary is-outlined is-pulled-right",
+                  on: {
+                    click: function($event) {
+                      _vm.openAdd(4, 1)
+                    }
+                  }
+                },
+                [_vm._v("\n\t\t\t\t\tAdd New\n\t\t\t\t")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table is-hoverable" }, [
+              _c("thead", [
+                _vm._m(6),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", { attrs: { colspan: "2" } }),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateUnits(4, 1)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateLecHours(4, 1)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateLabHours(4, 1)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateContactHours(4, 1)))
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.temp, function(item, key) {
+                  return item.year == 4 && item.sem == 1
+                    ? _c("tr", [
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-edit",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openUpdate(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-danger fa fa-times",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.del(key, item.curriculumsubject_id)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.subject_code))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.descriptive_title))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.prerequisite))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.units) + " ")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.lec_hours) + " ")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.lab_hours))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.contact_hours))
+                            ])
+                          ]
+                        )
+                      ])
+                    : _vm._e()
+                })
+              )
+            ]),
+            _vm._v(" "),
+            _c("h3", [
+              _vm._v("Fourth Year - "),
+              _c("strong", [_vm._v("2nd Semester")]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "button is-primary is-outlined is-pulled-right",
+                  on: {
+                    click: function($event) {
+                      _vm.openAdd(4, 2)
+                    }
+                  }
+                },
+                [_vm._v("\n\t\t\t\t\tAdd New\n\t\t\t\t")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table is-hoverable" }, [
+              _c("thead", [
+                _vm._m(7),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", { attrs: { colspan: "2" } }),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateUnits(4, 2)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateLecHours(4, 2)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateLabHours(4, 2)))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("th", [
+                    _c("p", { staticClass: "has-text-centered" }, [
+                      _vm._v(_vm._s(_vm.calculateContactHours(4, 2)))
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.temp, function(item, key) {
+                  return item.year == 4 && item.sem == 2
+                    ? _c("tr", [
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-edit",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openUpdate(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-danger fa fa-times",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.del(key, item.curriculumsubject_id)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.subject_code))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.descriptive_title))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.prerequisite))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.units) + " ")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.lec_hours) + " ")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.lab_hours))
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [
+                            _c("p", { staticClass: "has-text-centered" }, [
+                              _vm._v(_vm._s(item.contact_hours))
+                            ])
+                          ]
+                        )
+                      ])
+                    : _vm._e()
+                })
+              )
+            ])
+          ]
+        )
       ]),
       _vm._v(" "),
       _c("Add", {
@@ -55575,272 +58316,176 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Subject Code")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Descriptive Title")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Prerequisite")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLec Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Units")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lec Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ])
+      _c("th", [_vm._v("Lab Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Contact Hours")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Subject Code")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Descriptive Title")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Prerequisite")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLec Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Units")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lec Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ])
+      _c("th", [_vm._v("Lab Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Contact Hours")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Subject Code")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Descriptive Title")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Prerequisite")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLec Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Units")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lec Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ])
+      _c("th", [_vm._v("Lab Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Contact Hours")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Subject Code")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Descriptive Title")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Prerequisite")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLec Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Units")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lec Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ])
+      _c("th", [_vm._v("Lab Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Contact Hours")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Subject Code")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Descriptive Title")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Prerequisite")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLec Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Units")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lec Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ])
+      _c("th", [_vm._v("Lab Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Contact Hours")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Subject Code")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Descriptive Title")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Prerequisite")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLec Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Units")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lec Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ])
+      _c("th", [_vm._v("Lab Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Contact Hours")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Subject Code")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Descriptive Title")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Prerequisite")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLec Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Units")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lec Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ])
+      _c("th", [_vm._v("Lab Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Contact Hours")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Subject Code")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Descriptive Title")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Prerequisite")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLec Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Units")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lec Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ])
+      _c("th", [_vm._v("Lab Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Contact Hours")])
     ])
   }
 ]
@@ -55854,15 +58499,15 @@ if (false) {
 }
 
 /***/ }),
-/* 136 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(137)
+var __vue_script__ = __webpack_require__(142)
 /* template */
-var __vue_template__ = __webpack_require__(141)
+var __vue_template__ = __webpack_require__(143)
 /* template functional */
   var __vue_template_functional__ = false
 /* styles */
@@ -55902,7 +58547,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 137 */
+/* 142 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56447,9 +59092,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-var Add = __webpack_require__(16);
-var Show = __webpack_require__(17);
-var Update = __webpack_require__(138);
+var Add = __webpack_require__(4);
+var Show = __webpack_require__(5);
+var Update = __webpack_require__(13);
 /* harmony default export */ __webpack_exports__["default"] = ({
 	name: 'tabs',
 	components: { Add: Add, Show: Show, Update: Update },
@@ -56535,198 +59180,7 @@ var Update = __webpack_require__(138);
 });
 
 /***/ }),
-/* 138 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(139)
-/* template */
-var __vue_template__ = __webpack_require__(140)
-/* template functional */
-  var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\StudentChecklistUpdate.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-19cc1d75", Component.options)
-  } else {
-    hotAPI.reload("data-v-19cc1d75", Component.options)
-' + '  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 139 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-	props: ['openmodal'],
-	data: function data() {
-		return {
-			list: {},
-			errors: {}
-		};
-	},
-
-	methods: {
-		close: function close() {
-			this.$emit('closeRequest');
-		},
-		update: function update() {
-			var _this = this;
-
-			axios.post('/student/updateGrade', { data: this.$data.list.curriculumsubject_id, user_id: this.$route.params.id, grade: this.$data.list.grade }).then(function (response) {
-				_this.close();
-			}).catch(function (error) {
-				return _this.errors = error.response.data.errors;
-			});
-		}
-	}
-});
-
-/***/ }),
-/* 140 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "modal", class: _vm.openmodal }, [
-    _c("div", { staticClass: "modal-background" }),
-    _vm._v(" "),
-    _c("div", { staticClass: "modal-card" }, [
-      _c("header", { staticClass: "modal-card-head" }, [
-        _c("p", { staticClass: "modal-card-title" }, [
-          _vm._v("Update " + _vm._s(_vm.list.name) + "'s Details")
-        ]),
-        _vm._v(" "),
-        _c("button", {
-          staticClass: "delete",
-          attrs: { "aria-label": "close" },
-          on: { click: _vm.close }
-        })
-      ]),
-      _vm._v(" "),
-      _c("section", { staticClass: "modal-card-body" }, [
-        _c("div", { staticClass: "field" }, [
-          _c("label", { staticClass: "label" }, [_vm._v("Grade")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.list.grade,
-                  expression: "list.grade"
-                }
-              ],
-              staticClass: "input",
-              class: { "is-danger": _vm.errors.name },
-              attrs: { type: "text", placeholder: "Name" },
-              domProps: { value: _vm.list.grade },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.list, "grade", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _vm.errors.name
-            ? _c("small", { staticClass: "has-text-danger" }, [
-                _vm._v(_vm._s(_vm.errors.name[0]))
-              ])
-            : _vm._e()
-        ])
-      ]),
-      _vm._v(" "),
-      _c("footer", { staticClass: "modal-card-foot" }, [
-        _c(
-          "button",
-          { staticClass: "button is-success", on: { click: _vm.update } },
-          [_vm._v("Update")]
-        ),
-        _vm._v(" "),
-        _c("button", { staticClass: "button", on: { click: _vm.close } }, [
-          _vm._v("Cancel")
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-19cc1d75", module.exports)
-  }
-}
-
-/***/ }),
-/* 141 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -57923,14 +60377,12 @@ if (false) {
 }
 
 /***/ }),
-/* 142 */
+/* 144 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 143 */,
-/* 144 */,
 /* 145 */,
 /* 146 */,
 /* 147 */,
@@ -57940,7 +60392,54 @@ if (false) {
 /* 151 */,
 /* 152 */,
 /* 153 */,
-/* 154 */,
+/* 154 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(155)
+/* template */
+var __vue_template__ = __webpack_require__(156)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\CurriculumSubjectUpdate.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-1964a0c9", Component.options)
+  } else {
+    hotAPI.reload("data-v-1964a0c9", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
 /* 155 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -57991,590 +60490,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
-var Add = __webpack_require__(16);
-var Show = __webpack_require__(17);
-var Update = __webpack_require__(138);
 /* harmony default export */ __webpack_exports__["default"] = ({
-	name: 'tabs',
-	components: { Add: Add, Show: Show, Update: Update },
+	props: ['openmodal'],
 	data: function data() {
 		return {
-			currentTab: 0,
-			tabs: ['1st Year', '2nd Year', '3rd Year', '4th Year'],
-			addActive: '',
-			showActive: '',
-			updateActive: '',
-			lists: {},
-			errors: {},
-			loading: false,
-			searchQuery: '',
-			temp: {},
-			subjects: '',
-			zxc: {},
-			studDetail: ''
+			list: {},
+			errors: {}
 		};
 	},
 
-	watch: {
-		searchQuery: function searchQuery() {
+	methods: {
+		close: function close() {
+			this.$emit('closeRequest');
+		},
+		update: function update() {
 			var _this = this;
 
-			if (this.searchQuery.length > 0) {
-				this.temp = this.lists.filter(function (item) {
-					return Object.keys(item).some(function (key) {
-						var string = String(item[key]);
-						return string.toLowerCase().indexOf(_this.searchQuery.toLowerCase()) > -1;
-						// console.log(string)
-					});
-				});
-				// console.log(result)
-			} else {
-				this.temp = this.lists;
-			}
-		}
-	},
-	mounted: function mounted() {
-		var _this2 = this;
+			axios.patch('/curriculumsubject/' + this.list.curriculumsubject_id, this.$data.list).then(function (response) {
 
-		axios.post('/studentchecklist/getData').then(function (response) {
-			return _this2.temp = response.data;
-		}).catch(function (error) {
-			return _this2.errors = error.response.data.errors;
-		}), axios.post('/studPageStudDetail/getData').then(function (response) {
-			return _this2.studDetail = response.data;
-		}).catch(function (error) {
-			return _this2.errors = error.response.data.errors;
-		});
-	},
-
-	methods: {
-		openAdd: function openAdd(year, sem) {
-			this.$children[0].list.year = year;
-			this.$children[0].list.course_id = this.$route.params.id;
-			this.$children[0].list.sem = sem;
-			this.$children[0].subject = this.subjects;
-			this.addActive = 'is-active';
-		},
-		openShow: function openShow(key) {
-			this.$children[1].list = this.temp[key];
-			this.showActive = 'is-active';
-		},
-		openUpdate: function openUpdate(key) {
-			this.$children[2].list = this.temp[key];
-			this.updateActive = 'is-active';
-		},
-		close: function close() {
-			this.addActive = this.showActive = this.updateActive = '';
-		},
-		del: function del(key, curriculumsubject_id) {
-			var _this3 = this;
-
-			if (confirm("Are you sure ?")) {
-				this.loading = !this.loading;
-				axios.delete('/curriculumsubject/' + curriculumsubject_id).then(function (response) {
-					_this3.subjects.push(_this3.lists[key]);
-
-					_this3.lists.splice(key, 1);_this3.loading = !_this3.loading;
-				}).catch(function (error) {
-					return console.log(error);
-				});
-			}
-			console.log(key + ' ' + curriculumsubject_id);
+				_this.close();
+			}).catch(function (error) {
+				return _this.errors = error.response.data.errors;
+			});
 		}
 	}
 });
@@ -58587,1188 +60525,212 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("nav", { staticClass: "panel block" }, [
-        _c("p", { staticClass: "panel-heading" }, [
-          _vm._v("\n\tWelcome " + _vm._s(_vm.studDetail) + "\n\t\t\t\n\t\t\t"),
-          _vm.loading
-            ? _c("span", { staticClass: "is-pulled-right" }, [
-                _c("i", { staticClass: "fa fa-refresh fa-spin fa-2x fa-fw" })
+  return _c("div", { staticClass: "modal", class: _vm.openmodal }, [
+    _c("div", { staticClass: "modal-background" }),
+    _vm._v(" "),
+    _c("div", { staticClass: "modal-card" }, [
+      _c("header", { staticClass: "modal-card-head" }, [
+        _c("p", { staticClass: "modal-card-title" }, [
+          _vm._v("Update " + _vm._s(_vm.list.name) + "'s")
+        ]),
+        _vm._v(" "),
+        _c("button", {
+          staticClass: "delete",
+          attrs: { "aria-label": "close" },
+          on: { click: _vm.close }
+        })
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "modal-card-body" }, [
+        _c("div", { staticClass: "field" }, [
+          _c("label", { staticClass: "label" }, [_vm._v("Prerequisite")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.list.prerequisite,
+                  expression: "list.prerequisite"
+                }
+              ],
+              staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
+              attrs: { type: "text", placeholder: "Prerequisite" },
+              domProps: { value: _vm.list.prerequisite },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.list, "prerequisite", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("label", { staticClass: "label" }, [_vm._v("Units")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.list.units,
+                  expression: "list.units"
+                }
+              ],
+              staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
+              attrs: { type: "number", placeholder: "Units" },
+              domProps: { value: _vm.list.units },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.list, "units", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("label", { staticClass: "label" }, [_vm._v("Lecture Hours")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.list.lec_hours,
+                  expression: "list.lec_hours"
+                }
+              ],
+              staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
+              attrs: { type: "number", placeholder: "Lecture Hours" },
+              domProps: { value: _vm.list.lec_hours },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.list, "lec_hours", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("label", { staticClass: "label" }, [_vm._v("Lab Hours")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.list.lab_hours,
+                  expression: "list.lab_hours"
+                }
+              ],
+              staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
+              attrs: { type: "number", placeholder: "Lab Hours" },
+              domProps: { value: _vm.list.lab_hours },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.list, "lab_hours", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("label", { staticClass: "label" }, [_vm._v("Contact Hours")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.list.contact_hours,
+                  expression: "list.contact_hours"
+                }
+              ],
+              staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
+              attrs: { type: "number", placeholder: "Contact Hours" },
+              domProps: { value: _vm.list.contact_hours },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.list, "contact_hours", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
               ])
             : _vm._e()
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "panel-block" }, [
-          _c("div", { staticClass: "tabs is-medium" }, [
-            _c(
-              "div",
-              { staticClass: "control" },
-              _vm._l(_vm.tabs, function(tab, index) {
-                return _c(
-                  "button",
-                  {
-                    staticClass: "button",
-                    class: { active: _vm.currentTab === index },
-                    on: {
-                      click: function($event) {
-                        _vm.currentTab = index
-                      }
-                    }
-                  },
-                  [_vm._v(_vm._s(tab))]
-                )
-              })
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "panel" }, [
-          _c(
-            "div",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.currentTab === 0,
-                  expression: "currentTab === 0"
-                }
-              ],
-              staticClass: "container"
-            },
-            [
-              _vm._m(0),
-              _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 1 && item.sem == 1
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openUpdate(key)
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              }),
-              _vm._v(" "),
-              _vm._m(2),
-              _vm._v(" "),
-              _vm._m(3),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 1 && item.sem == 2
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openUpdate(key)
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              })
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.currentTab === 1,
-                  expression: "currentTab === 1"
-                }
-              ],
-              staticClass: "container"
-            },
-            [
-              _vm._m(4),
-              _vm._v(" "),
-              _vm._m(5),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 2 && item.sem == 1
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openUpdate(key)
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              }),
-              _vm._v(" "),
-              _vm._m(6),
-              _vm._v(" "),
-              _vm._m(7),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 2 && item.sem == 2
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openUpdate(key)
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              })
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.currentTab === 2,
-                  expression: "currentTab === 2"
-                }
-              ],
-              staticClass: "container"
-            },
-            [
-              _vm._m(8),
-              _vm._v(" "),
-              _vm._m(9),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 3 && item.sem == 1
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openUpdate(key)
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              }),
-              _vm._v(" "),
-              _vm._m(10),
-              _vm._v(" "),
-              _vm._m(11),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 3 && item.sem == 2
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openUpdate(key)
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              })
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.currentTab === 3,
-                  expression: "currentTab === 3"
-                }
-              ],
-              staticClass: "container"
-            },
-            [
-              _vm._m(12),
-              _vm._v(" "),
-              _vm._m(13),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 4 && item.sem == 1
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openUpdate(key)
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              }),
-              _vm._v(" "),
-              _vm._m(14),
-              _vm._v(" "),
-              _vm._m(15),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 4 && item.sem == 2
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openUpdate(key)
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              })
-            ],
-            2
-          )
         ])
       ]),
       _vm._v(" "),
-      _c("Add", {
-        attrs: { openmodal: _vm.addActive },
-        on: { closeRequest: _vm.close }
-      }),
-      _vm._v(" "),
-      _c("Show", {
-        attrs: { openmodal: _vm.showActive },
-        on: { closeRequest: _vm.close }
-      }),
-      _vm._v(" "),
-      _c("Update", {
-        attrs: { openmodal: _vm.updateActive },
-        on: { closeRequest: _vm.close }
-      })
-    ],
-    1
-  )
+      _c("footer", { staticClass: "modal-card-foot" }, [
+        _c(
+          "button",
+          { staticClass: "button is-success", on: { click: _vm.update } },
+          [_vm._v("Update")]
+        ),
+        _vm._v(" "),
+        _c("button", { staticClass: "button", on: { click: _vm.close } }, [
+          _vm._v("Cancel")
+        ])
+      ])
+    ])
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notification" }, [
-      _c("h3", [
-        _vm._v("First Year - "),
-        _c("strong", [_vm._v("1st Semester")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notification" }, [
-      _c("h3", [
-        _vm._v("First Year - "),
-        _c("strong", [_vm._v("2nd Semester")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notification" }, [
-      _c("h3", [
-        _vm._v("Second Year - "),
-        _c("strong", [_vm._v("1st Semester")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notification" }, [
-      _c("h3", [
-        _vm._v("Second Year - "),
-        _c("strong", [_vm._v("2nd Semester")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notification" }, [
-      _c("h3", [
-        _vm._v("Third Year - "),
-        _c("strong", [_vm._v("1st Semester")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notification" }, [
-      _c("h3", [
-        _vm._v("Third Year - "),
-        _c("strong", [_vm._v("2nd Semester")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notification" }, [
-      _c("h3", [
-        _vm._v("Fourth Year - "),
-        _c("strong", [_vm._v("1st Semester")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notification" }, [
-      _c("h3", [
-        _vm._v("Fourth Year - "),
-        _c("strong", [_vm._v("2nd Semester")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-14436ff6", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-1964a0c9", module.exports)
   }
 }
 

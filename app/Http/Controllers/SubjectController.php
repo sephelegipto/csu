@@ -11,7 +11,7 @@ class SubjectController extends Controller
     public function getData()
     {
       return DB::table('subjects')
-      ->orderby('subject_id')
+      ->orderby('subject_id', 'desc')
       ->get();
   }
 
@@ -19,10 +19,7 @@ class SubjectController extends Controller
   {
 
       $id = DB::table('subjects')->insertGetId(
-       ['subject_code' => $request->subject_code, 'descriptive_title' => $request->descriptive_title,
-       'prerequisite' => $request->prerequisite, 'units' => $request->units,
-       'lec_hours' => $request->lec_hours, 'lab_hours' => $request->lab_hours,
-       'contact_hours' => $request->contact_hours]
+       ['subject_code' => $request->subject_code, 'descriptive_title' => $request->descriptive_title]
    );
 
       return DB::table('subjects')
@@ -44,11 +41,7 @@ class SubjectController extends Controller
      $sub = Subject::find($request->subject_id);
      $sub->subject_code = $request->subject_code; 
      $sub->descriptive_title = $request->descriptive_title;  
-     $sub->prerequisite = $request->prerequisite;
-     $sub->units = $request->units;
-     $sub->lec_hours = $request->lec_hours;
-     $sub->lab_hours = $request->lab_hours;
-     $sub->contact_hours = $request->contact_hours; 	
+	
      $sub->save();
 
  }

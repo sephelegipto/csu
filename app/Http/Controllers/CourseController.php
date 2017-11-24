@@ -39,7 +39,6 @@ class CourseController extends Controller
     public function update(Request $request)
     {
     	$dept_id = DB::table('departments')->where('abbre', $request->dept_name)->value('department_id');
-
     	$course = Course::find($request->course_id);
     	$course->name = $request->course_name; 
     	$course->department_id = $dept_id;   

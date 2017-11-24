@@ -56,13 +56,7 @@ export default{
 		update(){
 			axios.patch(`/curriculum/${this.list.curriculum_id}`, this.$data.list).then((response)=> {
 
-				this.$parent.lists.sort(function(a,b){
-					if (a.name > b.name) {
-						return 1;
-					}else if(a.name < b.name){
-						return -1;
-					}
-				})
+			
 				this.close()
 			})
 			.catch((error) => this.errors = error.response.data.errors)

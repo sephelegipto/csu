@@ -579,14 +579,9 @@ export default{
 		},
 		mounted(){
 		
-			axios.post('/studentchecklist/getData')
+			axios.post('/studentchecklistpage/getData')
 			.then((response)=> this.temp = response.data)
-			.catch((error) => this.errors = error.response.data.errors),
-
-			axios.post('/studPageStudDetail/getData')
-			.then((response)=> this.studDetail = response.data)
 			.catch((error) => this.errors = error.response.data.errors)
-			
 		},
 		methods:{
 			openAdd(year, sem){
