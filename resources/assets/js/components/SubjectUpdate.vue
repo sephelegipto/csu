@@ -19,6 +19,10 @@
 					<div class="control">
 						<input class="input" :class="{'is-danger':errors.name}" type="text" placeholder="Descriptive Title" v-model="list.descriptive_title">
 					</div>
+					<label class="label">Units</label>
+					<div class="control">
+						<input class="input" :class="{'is-danger':errors.name}" type="text" placeholder="Units" v-model="list.units">
+					</div>
 					
 				
 

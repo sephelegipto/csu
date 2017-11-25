@@ -13,10 +13,7 @@
 						<input class="input" :class="{'is-danger':errors.name}" type="text" placeholder="Prerequisite" v-model="list.prerequisite">
 					</div>
 					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>
-					<label class="label">Units</label>
-					<div class="control">
-						<input class="input" :class="{'is-danger':errors.name}" type="number" placeholder="Units" v-model="list.units">
-					</div>
+					
 					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>
 					<label class="label">Lecture Hours</label>
 					<div class="control">
@@ -30,7 +27,7 @@
 					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>
 					<label class="label">Contact Hours</label>
 					<div class="control">
-						<input class="input" :class="{'is-danger':errors.name}" type="number" placeholder="Contact Hours" v-model="list.contact_hours">
+						<input class="input" :class="{'is-danger':errors.name}" type="number" placeholder="Contact Hours" disabled :value="computeTotal">
 					</div>
 					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>	
 				</div>
@@ -44,26 +41,34 @@
 </template>
 
 <script>
-	export default{
-		props:['openmodal'],
-		data(){
-			return{
-				list:{},
-				errors:{}
-			}
-		},
-		methods:{
-			close(){
-				this.$emit('closeRequest');
-			},
-			update(){
-				axios.patch(`/curriculumsubject/${this.list.curriculumsubject_id}`, this.$data.list).then((response)=> {
-					
-					this.close()
-				})
-				.catch((error) => this.errors = error.response.data.errors)
-				
-			}
-		}	
+export default{
+	props:['openmodal'],
+	data(){
+		return{
+			list:{},
+			errors:{}
+		}
+	},
+	computed: {
+    // a computed getter
+    computeTotal: function () {
+      // `this` points to the vm instance
+      this.list.contact_hours = Number(this.list.lab_hours) + Number(this.list.lec_hours);
+      return Number(this.list.lab_hours) + Number(this.list.lec_hours);
+  }
+},
+methods:{
+	close(){
+		this.$emit('closeRequest');
+	},
+	update(){
+		axios.patch(`/curriculumsubject/${this.list.curriculumsubject_id}`, this.$data.list).then((response)=> {
+
+			this.close()
+		})
+		.catch((error) => this.errors = error.response.data.errors)
+
 	}
+}	
+}
 </script>

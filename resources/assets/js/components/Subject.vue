@@ -1,8 +1,8 @@
 <template>
 <div>
    <div class="container column is-offset-1 is-10">
-    <div class="column is-half
-is-offset-one-quarter">
+    <div class="column is-7
+is-offset-1">
        <strong> Subjects </strong>
        <button class="button is-primary is-outlined is-pulled-right" @click="openAdd">
           Add New
@@ -11,8 +11,8 @@ is-offset-one-quarter">
         <i class="fa fa-refresh fa-spin fa-2x fa-fw"></i>
     </span>
 </div>
-<div class="column is-half
-is-offset-one-quarter">
+<div class="column is-7
+is-offset-1">
     <p class="control has-icons-left">
       <input class="input is-small" type="text" placeholder="search" v-model="searchQuery">
       <span class="icon is-small is-left">
@@ -20,8 +20,8 @@ is-offset-one-quarter">
     </span>
 </p>
 </div>
-<div class="column is-half
-is-offset-one-quarter">
+<div class="column is-11
+is-offset-1">
     <table class="table is-hoverable">
         <thead>
           <tr>
@@ -30,27 +30,31 @@ is-offset-one-quarter">
            
             <th>Subject Code</th>
             <th>Descriptive Title</th>
+            <th>Units</th>
         </tr>
     </thead>
     <tbody>
       <tr v-for="item,key in temp">
         <td>  
+            
             <a>
-            <span>
-                <i class="has-text-danger fa fa-trash" aria-hidden="true" @click="del(key,item.subject_id)"></i>
-            </span>
+                 <span>
+              <i class="has-text-info fa fa-edit" aria-hidden="true" @click="openUpdate(key)"></i>
+          </span>
                </a>
 </td>
 <td>
     <a>
-            <span>
-              <i class="has-text-info fa fa-edit" aria-hidden="true" @click="openUpdate(key)"></i>
-          </span>
+         <span>
+                <i class="has-text-danger fa fa-trash" aria-hidden="true" @click="del(key,item.subject_id)"></i>
+            </span>
+              
    </a>
     </td>
 
       <td @click="openUpdate(key)">{{ item.subject_code }}</td>
       <td @click="openUpdate(key)">{{ item.descriptive_title }}</td>
+      <td @click="openUpdate(key)">{{ item.units }}</td>
   </tr>
 
 </tbody>

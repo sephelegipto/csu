@@ -43,8 +43,8 @@ public function store(Request $request)
     DB::table('CurriculumSubjects')
     ->where('curriculumsubject_id', $curriculumsubject_id)
     ->update(['identifier' => 0, 'prerequisite' => $request->prerequisite,
-      'units' => $request->units, 'lec_hours' => $request->lec_hours,
-      'lab_hours' => $request->lab_hours, 'contact_hours' => $request->contact_hours
+      'lec_hours' => $request->lec_hours, 'lab_hours' => $request->lab_hours, 
+      'contact_hours' => $request->contact_hours
     ]);
     
     
@@ -60,9 +60,7 @@ public function store(Request $request)
       ['curriculum_id' => $request->curriculum_id, 'year' => $request->year,
       'sem' => $request->sem, 'subject_id' => $request->subject_id,
       'identifier' => 0,
-      'prerequisite' => $request->prerequisite, 'units' => $request->units,
-      'lab_hours' => $request->lec_hours, 'lab_hours' => $request->lab_hours,
-      'contact_hours' => $request->contact_hours]
+      'prerequisite' => $request->prerequisite, 'lab_hours' => $request->lec_hours, 'lab_hours' => $request->lab_hours, 'contact_hours' => $request->contact_hours]
     );
     return DB::table('curriculumsubjects')
     ->join('subjects', 'curriculumsubjects.subject_id', '=', 'subjects.subject_id')
@@ -91,7 +89,6 @@ public function update(Request $request)
 
  $sub = CurriculumSubject::find($request->curriculumsubject_id); 
  $sub->prerequisite = $request->prerequisite;
- $sub->units = $request->units;
  $sub->lec_hours = $request->lec_hours;
  $sub->lab_hours = $request->lab_hours;
  $sub->contact_hours = $request->contact_hours; 	

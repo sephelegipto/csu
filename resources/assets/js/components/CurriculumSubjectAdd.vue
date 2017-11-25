@@ -38,7 +38,7 @@
 					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>
 					<label class="label">Contact Hours</label>
 					<div class="control">
-						<input class="input" :class="{'is-danger':errors.name}" type="number" placeholder="Contact Hours" disabled :value="computeTotal ">
+						<input class="input" :class="{'is-danger':errors.name}" type="number" placeholder="Contact Hours" disabled :value="computeTotal">
 					</div>
 					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>						
 				</div>
@@ -82,6 +82,8 @@ export default{
     // a computed getter
     computeTotal: function () {
       // `this` points to the vm instance
+            this.list.contact_hours = Number(this.list.lab_hours) + Number(this.list.lec_hours);
+
       return Number(this.list.lab_hours) + Number(this.list.lec_hours);
   }
 },

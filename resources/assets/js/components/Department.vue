@@ -1,55 +1,75 @@
 <template>
 	<div>
-		
-	<nav class="panel column is-offset-2 is-8" >
-	  <p class="panel-heading">
-	    Departments 
-	    <button class="button is-primary is-outlined" @click="openAdd">
-	      Add New
-	    </button>
-	    <span class="is-pulled-right" v-if="loading">
-	    	<i class="fa fa-refresh fa-spin fa-2x fa-fw"></i>
-	    </span>
-	  </p>
-	  <div class="panel-block">
-	    <p class="control has-icons-left">
-	      <input class="input is-small" type="text" placeholder="search" v-model="searchQuery">
-	      <span class="icon is-small is-left">
-	        <i class="fa fa-search"></i>
-	      </span>
-	    </p>
-	  </div>
-
-	 <a class="panel-block ">
-	  	<span class="column is-6">
-	    	Department
-	  	</span>
-	  	<span class="column is-3">
-	    	Abbreviation
-	  	</span>
-	  </a>
-	  <a class="panel-block " v-for="item,key in temp">
-	  	<span class="column is-6">
-	    	{{ item.name }}
-	  	</span>
-	  	<span class="column is-3">
-	    	{{ item.abbre }}
-	  	</span>
-	    <span class="panel-icon column is-1">
-	      <i class="has-text-danger fa fa-trash" aria-hidden="true" @click="del(key,item.department_id)"></i>
-	    </span>
-	    <span class="panel-icon column is-1">
-	      <i class="has-text-info fa fa-edit" aria-hidden="true" @click="openUpdate(key)"></i>
-	    </span><span class="panel-icon column is-1">
-	      <i class="has-text-primary fa fa-eye" aria-hidden="true" @click="openShow(key)"></i>
-	    </span>
-	  </a>
-	</nav>
-
-	<Add :openmodal='addActive' @closeRequest='close'></Add>
-	<Show :openmodal='showActive' @closeRequest='close'></Show>
-	<Update :openmodal='updateActive' @closeRequest='close'></Update>
+		<div class="container column is-offset-1 is-10">
+			<div class="column is-7
+			is-offset-1">
+			<strong> Departments </strong>
+			<button class="button is-primary is-outlined is-pulled-right" @click="openAdd">
+				Add New
+			</button>
+			<span class="is-pulled-right" v-if="loading">
+				<i class="fa fa-refresh fa-spin fa-2x fa-fw"></i>
+			</span>
+		</div>
+		<div class="column is-7
+		is-offset-1">
+		<p class="control has-icons-left">
+			<input class="input is-small" type="text" placeholder="search" v-model="searchQuery">
+			<span class="icon is-small is-left">
+				<i class="fa fa-search"></i>
+			</span>
+		</p>
 	</div>
+	<div class="column is-7
+	is-offset-1">
+	<table class="table is-hoverable">
+		<thead>
+			<tr>
+				<th colspan="2">Action</th>
+
+
+				<th>Department</th>
+				<th>Abbreviation</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for="item,key in temp">
+				<td>  
+
+					<a>
+						<span>
+							<i class="has-text-info fa fa-edit" aria-hidden="true" @click="openUpdate(key)"></i>
+						</span>
+					</a>
+				</td>
+				<td>
+					<a>
+						<span>
+							<i class="has-text-danger fa fa-trash" aria-hidden="true" @click="del(key,item.course_id)"></i>
+						</span>
+
+					</a>
+				</td>
+
+				<td @click="openUpdate(key)">{{ item.name }}</td>
+				<td @click="openUpdate(key)">{{ item.abbre }}</td>
+				
+			</tr>
+
+		</tbody>
+	</table>
+
+
+
+</div>
+
+</div>
+
+<Add :openmodal='addActive' @closeRequest='close'></Add>
+<Show :openmodal='showActive' @closeRequest='close'></Show>
+<Update :openmodal='updateActive' @closeRequest='close'></Update>
+</div>
 </template>
 
 <script>
