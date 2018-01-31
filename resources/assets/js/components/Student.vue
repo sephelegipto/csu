@@ -48,7 +48,7 @@
 				<td>
 					<a>
 						<span>
-							<i class="has-text-danger fa fa-trash" aria-hidden="true" @click="del(key,item.course_id)"></i>
+							<i class="has-text-danger fa fa-trash" aria-hidden="true" @click="del(key,item.id)"></i>
 						</span>
 
 					</a>

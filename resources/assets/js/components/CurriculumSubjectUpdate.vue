@@ -13,6 +13,11 @@
 						<input class="input" :class="{'is-danger':errors.name}" type="text" placeholder="Prerequisite" v-model="list.prerequisite">
 					</div>
 					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>
+					<label class="label">Units</label>
+					<div class="control">
+						<input class="input" :class="{'is-danger':errors.name}" type="number" placeholder="Units" v-model="list.units">
+					</div>
+					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>
 					
 					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>
 					<label class="label">Lecture Hours</label>
@@ -28,6 +33,16 @@
 					<label class="label">Contact Hours</label>
 					<div class="control">
 						<input class="input" :class="{'is-danger':errors.name}" type="number" placeholder="Contact Hours" disabled :value="computeTotal">
+					</div>
+					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>
+					<label class="label">Lec Units</label>
+					<div class="control">
+						<input class="input" :class="{'is-danger':errors.name}" type="number" placeholder="Lec Units" v-model="list.lec_units">
+					</div>
+					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>
+					<label class="label">Lab Units</label>
+					<div class="control">
+						<input class="input" :class="{'is-danger':errors.name}" type="number" placeholder="Lab Units" v-model="list.lab_units">
 					</div>
 					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>	
 				</div>

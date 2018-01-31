@@ -3,7 +3,7 @@
 		<div class="modal-background"></div>
 		<div class="modal-card">
 			<header class="modal-card-head">
-				<p class="modal-card-title">Update {{ list.course_name }}'s </p>
+				<p class="modal-card-title">Update {{ list.descriptive_title }}'s </p>
 				<button class="delete" aria-label="close" @click='close'></button>
 			</header>
 			<section class="modal-card-body">

@@ -46912,6 +46912,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -46954,7 +46961,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 			this.$data.list.subject_id = this.$data.subject[this.$data.list.subject_key].subject_id;
 			axios.post('/curriculumsubject/store', this.$data.list).then(function (response) {
-				console.log(response);
 
 				_this.close();
 				_this.$parent.lists.push(response.data[0]);
@@ -47071,39 +47077,6 @@ var render = function() {
               ])
             : _vm._e(),
           _vm._v(" "),
-          _c("label", { staticClass: "label" }, [_vm._v("Units")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "control" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.list.units,
-                  expression: "list.units"
-                }
-              ],
-              staticClass: "input",
-              class: { "is-danger": _vm.errors.name },
-              attrs: { type: "number", placeholder: "Units" },
-              domProps: { value: _vm.list.units },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.list, "units", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _vm.errors.name
-            ? _c("small", { staticClass: "has-text-danger" }, [
-                _vm._v(_vm._s(_vm.errors.name[0]))
-              ])
-            : _vm._e(),
-          _vm._v(" "),
           _c("label", { staticClass: "label" }, [_vm._v("Lecture Hours")]),
           _vm._v(" "),
           _c("div", { staticClass: "control" }, [
@@ -47182,6 +47155,72 @@ var render = function() {
                 disabled: ""
               },
               domProps: { value: _vm.computeTotal }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("label", { staticClass: "label" }, [_vm._v("Lec Units")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.list.lec_units,
+                  expression: "list.lec_units"
+                }
+              ],
+              staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
+              attrs: { type: "number", placeholder: "Lec Units" },
+              domProps: { value: _vm.list.lec_units },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.list, "lec_units", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("label", { staticClass: "label" }, [_vm._v("Lab Units")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.list.lab_units,
+                  expression: "list.lab_units"
+                }
+              ],
+              staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
+              attrs: { type: "number", placeholder: "Lab Units" },
+              domProps: { value: _vm.list.lab_units },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.list, "lab_units", $event.target.value)
+                }
+              }
             })
           ]),
           _vm._v(" "),
@@ -47463,7 +47502,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		update: function update() {
 			var _this = this;
 
-			axios.post('/student/updateGrade', { data: this.$data.list.curriculumsubject_id, user_id: this.$route.params.id, grade: this.$data.list.grade }).then(function (response) {
+			axios.post('/student/updateGrade', this.$data.list).then(function (response) {
 				_this.close();
 			}).catch(function (error) {
 				return _this.errors = error.response.data.errors;
@@ -50077,7 +50116,7 @@ var render = function() {
                           attrs: { "aria-hidden": "true" },
                           on: {
                             click: function($event) {
-                              _vm.del(key, item.course_id)
+                              _vm.del(key, item.id)
                             }
                           }
                         })
@@ -54830,7 +54869,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v(_vm._s(item.dept_name))]
+                    [_vm._v(_vm._s(item.abbre))]
                   )
                 ])
               })
@@ -54876,7 +54915,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Course")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Department")])
+        _c("th", [_vm._v("Abbreviation")])
       ])
     ])
   }
@@ -54944,6 +54983,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -55666,7 +55707,7 @@ var render = function() {
     _c("div", { staticClass: "modal-card" }, [
       _c("header", { staticClass: "modal-card-head" }, [
         _c("p", { staticClass: "modal-card-title" }, [
-          _vm._v("Update " + _vm._s(_vm.list.course_name) + "'s ")
+          _vm._v("Update " + _vm._s(_vm.list.descriptive_title) + "'s ")
         ]),
         _vm._v(" "),
         _c("button", {
@@ -55884,17 +55925,39 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _c("a", [
-                      _c("span", [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-list-ol",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openShow(key)
-                            }
-                          }
-                        })
-                      ])
+                      _c(
+                        "span",
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              attrs: {
+                                to: {
+                                  path:
+                                    "/curriculumsubject/" +
+                                    item.curriculum_id +
+                                    "/" +
+                                    item.course_name +
+                                    "/" +
+                                    item.year
+                                }
+                              }
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-list-ol",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openShow(key)
+                                  }
+                                }
+                              })
+                            ]
+                          )
+                        ],
+                        1
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -56610,6 +56673,56 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 var Add = __webpack_require__(4);
 var Show = __webpack_require__(5);
@@ -56729,6 +56842,38 @@ var Update = __webpack_require__(140);
 				    val = _ref10[1];
 
 				if (val.year == year && val.sem == sem) total.push(val.contact_hours); // the value of the current key.
+			});
+
+			return total.reduce(function (total, num) {
+				return Number(total) + Number(num);
+			}, 0);
+		};
+	}), _defineProperty(_computed, 'calculateLecUnits', function calculateLecUnits() {
+		return function (year, sem) {
+			var total = [];
+
+			Object.entries(this.temp).forEach(function (_ref11) {
+				var _ref12 = _slicedToArray(_ref11, 2),
+				    key = _ref12[0],
+				    val = _ref12[1];
+
+				if (val.year == year && val.sem == sem) total.push(val.lec_units); // the value of the current key.
+			});
+
+			return total.reduce(function (total, num) {
+				return Number(total) + Number(num);
+			}, 0);
+		};
+	}), _defineProperty(_computed, 'calculateLabUnits', function calculateLabUnits() {
+		return function (year, sem) {
+			var total = [];
+
+			Object.entries(this.temp).forEach(function (_ref13) {
+				var _ref14 = _slicedToArray(_ref13, 2),
+				    key = _ref14[0],
+				    val = _ref14[1];
+
+				if (val.year == year && val.sem == sem) total.push(val.lab_units); // the value of the current key.
 			});
 
 			return total.reduce(function (total, num) {
@@ -56884,6 +57029,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: ['openmodal'],
@@ -56967,6 +57127,39 @@ var render = function() {
                     return
                   }
                   _vm.$set(_vm.list, "prerequisite", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("label", { staticClass: "label" }, [_vm._v("Units")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.list.units,
+                  expression: "list.units"
+                }
+              ],
+              staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
+              attrs: { type: "number", placeholder: "Units" },
+              domProps: { value: _vm.list.units },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.list, "units", $event.target.value)
                 }
               }
             })
@@ -57062,6 +57255,72 @@ var render = function() {
                 disabled: ""
               },
               domProps: { value: _vm.computeTotal }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("label", { staticClass: "label" }, [_vm._v("Lec Units")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.list.lec_units,
+                  expression: "list.lec_units"
+                }
+              ],
+              staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
+              attrs: { type: "number", placeholder: "Lec Units" },
+              domProps: { value: _vm.list.lec_units },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.list, "lec_units", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _vm.errors.name
+            ? _c("small", { staticClass: "has-text-danger" }, [
+                _vm._v(_vm._s(_vm.errors.name[0]))
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("label", { staticClass: "label" }, [_vm._v("Lab Units")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.list.lab_units,
+                  expression: "list.lab_units"
+                }
+              ],
+              staticClass: "input",
+              class: { "is-danger": _vm.errors.name },
+              attrs: { type: "number", placeholder: "Lab Units" },
+              domProps: { value: _vm.list.lab_units },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.list, "lab_units", $event.target.value)
+                }
+              }
             })
           ]),
           _vm._v(" "),
@@ -57202,29 +57461,17 @@ var render = function() {
                   _vm._v(" "),
                   _c("th"),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateUnits(1, 1)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateUnits(1, 1)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateLecHours(1, 1)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecHours(1, 1)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateLabHours(1, 1)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabHours(1, 1)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateContactHours(1, 1)))
-                    ])
-                  ])
+                  _c("th", [_vm._v(_vm._s(_vm.calculateContactHours(1, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecUnits(1, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabUnits(1, 1)))])
                 ])
               ]),
               _vm._v(" "),
@@ -57274,11 +57521,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.subject_code))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.subject_code))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57290,11 +57533,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.descriptive_title))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.descriptive_title))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57306,11 +57545,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.prerequisite))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.prerequisite))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57322,11 +57557,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.units) + " ")
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.units))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57338,11 +57569,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.lec_hours) + " ")
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.lec_hours))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57354,11 +57581,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.lab_hours))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.lab_hours))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57370,11 +57593,31 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.contact_hours))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.contact_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_units))]
                         )
                       ])
                     : _vm._e()
@@ -57413,29 +57656,17 @@ var render = function() {
                   _vm._v(" "),
                   _c("th"),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateUnits(1, 2)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateUnits(1, 2)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateLecHours(1, 2)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecHours(1, 2)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateLabHours(1, 2)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabHours(1, 2)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateContactHours(1, 2)))
-                    ])
-                  ])
+                  _c("th", [_vm._v(_vm._s(_vm.calculateContactHours(1, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecUnits(1, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabUnits(1, 2)))])
                 ])
               ]),
               _vm._v(" "),
@@ -57485,11 +57716,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.subject_code))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.subject_code))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57501,11 +57728,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.descriptive_title))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.descriptive_title))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57517,11 +57740,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.prerequisite))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.prerequisite))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57533,11 +57752,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.units) + " ")
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.units))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57549,11 +57764,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.lec_hours) + " ")
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.lec_hours))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57565,11 +57776,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.lab_hours))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.lab_hours))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57581,11 +57788,31 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.contact_hours))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.contact_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_units))]
                         )
                       ])
                     : _vm._e()
@@ -57640,29 +57867,17 @@ var render = function() {
                   _vm._v(" "),
                   _c("th"),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateUnits(2, 1)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateUnits(2, 1)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateLecHours(2, 1)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecHours(2, 1)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateLabHours(2, 1)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabHours(2, 1)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateContactHours(2, 1)))
-                    ])
-                  ])
+                  _c("th", [_vm._v(_vm._s(_vm.calculateContactHours(2, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecUnits(2, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabUnits(2, 1)))])
                 ])
               ]),
               _vm._v(" "),
@@ -57712,11 +57927,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.subject_code))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.subject_code))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57728,11 +57939,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.descriptive_title))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.descriptive_title))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57744,11 +57951,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.prerequisite))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.prerequisite))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57760,11 +57963,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.units) + " ")
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.units))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57776,11 +57975,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.lec_hours) + " ")
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.lec_hours))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57792,11 +57987,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.lab_hours))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.lab_hours))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57808,11 +57999,31 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.contact_hours))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.contact_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_units))]
                         )
                       ])
                     : _vm._e()
@@ -57851,29 +58062,17 @@ var render = function() {
                   _vm._v(" "),
                   _c("th"),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateUnits(2, 2)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateUnits(2, 2)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateLecHours(2, 2)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecHours(2, 2)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateLabHours(2, 2)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabHours(2, 2)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateContactHours(2, 2)))
-                    ])
-                  ])
+                  _c("th", [_vm._v(_vm._s(_vm.calculateContactHours(2, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecUnits(2, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabUnits(2, 2)))])
                 ])
               ]),
               _vm._v(" "),
@@ -57923,11 +58122,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.subject_code))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.subject_code))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57939,11 +58134,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.descriptive_title))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.descriptive_title))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57955,11 +58146,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.prerequisite))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.prerequisite))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57971,11 +58158,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.units) + " ")
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.units))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -57987,11 +58170,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.lec_hours) + " ")
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.lec_hours))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58003,11 +58182,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.lab_hours))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.lab_hours))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58019,11 +58194,31 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.contact_hours))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.contact_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_units))]
                         )
                       ])
                     : _vm._e()
@@ -58078,29 +58273,17 @@ var render = function() {
                   _vm._v(" "),
                   _c("th"),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateUnits(3, 1)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateUnits(3, 1)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateLecHours(3, 1)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecHours(3, 1)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateLabHours(3, 1)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabHours(3, 1)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateContactHours(3, 1)))
-                    ])
-                  ])
+                  _c("th", [_vm._v(_vm._s(_vm.calculateContactHours(3, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecUnits(3, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabUnits(3, 1)))])
                 ])
               ]),
               _vm._v(" "),
@@ -58150,11 +58333,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.subject_code))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.subject_code))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58166,11 +58345,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.descriptive_title))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.descriptive_title))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58182,11 +58357,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.prerequisite))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.prerequisite))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58198,11 +58369,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.units) + " ")
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.units))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58214,11 +58381,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.lec_hours) + " ")
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.lec_hours))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58230,11 +58393,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.lab_hours))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.lab_hours))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58246,11 +58405,31 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.contact_hours))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.contact_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_units))]
                         )
                       ])
                     : _vm._e()
@@ -58289,29 +58468,17 @@ var render = function() {
                   _vm._v(" "),
                   _c("th"),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateUnits(3, 2)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateUnits(3, 2)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateLecHours(3, 2)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecHours(3, 2)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateLabHours(3, 2)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabHours(3, 2)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateContactHours(3, 2)))
-                    ])
-                  ])
+                  _c("th", [_vm._v(_vm._s(_vm.calculateContactHours(3, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecUnits(3, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabUnits(3, 2)))])
                 ])
               ]),
               _vm._v(" "),
@@ -58361,11 +58528,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.subject_code))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.subject_code))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58377,11 +58540,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.descriptive_title))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.descriptive_title))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58393,11 +58552,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.prerequisite))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.prerequisite))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58409,11 +58564,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.units) + " ")
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.units))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58425,11 +58576,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.lec_hours) + " ")
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.lec_hours))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58441,11 +58588,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.lab_hours))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.lab_hours))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58457,11 +58600,31 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.contact_hours))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.contact_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_units))]
                         )
                       ])
                     : _vm._e()
@@ -58516,29 +58679,20 @@ var render = function() {
                   _vm._v(" "),
                   _c("th"),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateUnits(4, 1)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateUnits(4, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecHours(4, 1)))]),
                   _vm._v(" "),
                   _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateLecHours(4, 1)))
-                    ])
+                    _vm._v(_vm._s(_vm.calculateLabHours(4, 1))),
+                    _c("p")
                   ]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateLabHours(4, 1)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateContactHours(4, 1)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateContactHours(4, 1)))
-                    ])
-                  ])
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecUnits(4, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabUnits(4, 1)))])
                 ])
               ]),
               _vm._v(" "),
@@ -58588,11 +58742,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.subject_code))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.subject_code))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58604,11 +58754,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.descriptive_title))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.descriptive_title))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58620,11 +58766,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.prerequisite))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.prerequisite))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58636,11 +58778,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.units) + " ")
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.units))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58652,11 +58790,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.lec_hours) + " ")
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.lec_hours))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58668,11 +58802,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.lab_hours))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.lab_hours))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58684,11 +58814,31 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.contact_hours))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.contact_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_units))]
                         )
                       ])
                     : _vm._e()
@@ -58727,29 +58877,17 @@ var render = function() {
                   _vm._v(" "),
                   _c("th"),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateUnits(4, 2)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateUnits(4, 2)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateLecHours(4, 2)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecHours(4, 2)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateLabHours(4, 2)))
-                    ])
-                  ]),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabHours(4, 2)))]),
                   _vm._v(" "),
-                  _c("th", [
-                    _c("p", { staticClass: "has-text-centered" }, [
-                      _vm._v(_vm._s(_vm.calculateContactHours(4, 2)))
-                    ])
-                  ])
+                  _c("th", [_vm._v(_vm._s(_vm.calculateContactHours(4, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecUnits(4, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabUnits(4, 2)))])
                 ])
               ]),
               _vm._v(" "),
@@ -58799,11 +58937,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.subject_code))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.subject_code))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58815,11 +58949,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.descriptive_title))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.descriptive_title))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58831,11 +58961,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.prerequisite))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.prerequisite))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58847,11 +58973,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.units) + " ")
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.units))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58863,11 +58985,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.lec_hours) + " ")
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.lec_hours))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58879,11 +58997,7 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.lab_hours))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.lab_hours))]
                         ),
                         _vm._v(" "),
                         _c(
@@ -58895,11 +59009,31 @@ var render = function() {
                               }
                             }
                           },
-                          [
-                            _c("p", { staticClass: "has-text-centered" }, [
-                              _vm._v(_vm._s(item.contact_hours))
-                            ])
-                          ]
+                          [_vm._v(_vm._s(item.contact_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_units))]
                         )
                       ])
                     : _vm._e()
@@ -58948,7 +59082,11 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("Lab Hours")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Contact Hours")])
+      _c("th", [_vm._v("Contact Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lecture Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Units")])
     ])
   },
   function() {
@@ -58970,7 +59108,11 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("Lab Hours")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Contact Hours")])
+      _c("th", [_vm._v("Contact Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lecture Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Units")])
     ])
   },
   function() {
@@ -58992,7 +59134,11 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("Lab Hours")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Contact Hours")])
+      _c("th", [_vm._v("Contact Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lecture Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Units")])
     ])
   },
   function() {
@@ -59014,7 +59160,11 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("Lab Hours")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Contact Hours")])
+      _c("th", [_vm._v("Contact Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lecture Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Units")])
     ])
   },
   function() {
@@ -59036,7 +59186,11 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("Lab Hours")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Contact Hours")])
+      _c("th", [_vm._v("Contact Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lecture Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Units")])
     ])
   },
   function() {
@@ -59058,7 +59212,11 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("Lab Hours")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Contact Hours")])
+      _c("th", [_vm._v("Contact Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lecture Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Units")])
     ])
   },
   function() {
@@ -59080,7 +59238,11 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("Lab Hours")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Contact Hours")])
+      _c("th", [_vm._v("Contact Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lecture Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Units")])
     ])
   },
   function() {
@@ -59102,7 +59264,11 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("Lab Hours")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Contact Hours")])
+      _c("th", [_vm._v("Contact Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lecture Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Units")])
     ])
   }
 ]
@@ -59169,6 +59335,33 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+var _computed;
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -59727,7 +59920,8 @@ var Update = __webpack_require__(13);
 			loading: false,
 			searchQuery: '',
 			temp: '',
-			subjects: ''
+			subjects: '',
+			notes: {}
 		};
 	},
 
@@ -59748,7 +59942,124 @@ var Update = __webpack_require__(13);
 				this.temp = this.lists;
 			}
 		}
-	},
+	}, computed: (_computed = {
+		calculateLecHours: function calculateLecHours() {
+			return function (year, sem) {
+				var total = [];
+
+				Object.entries(this.temp).forEach(function (_ref) {
+					var _ref2 = _slicedToArray(_ref, 2),
+					    key = _ref2[0],
+					    val = _ref2[1];
+
+					if (val.year == year && val.sem == sem) total.push(val.lec_hours);
+					alert(val.lec_hours); // the value of the current key.
+				});
+
+				return total.reduce(function (total, num) {
+					return Number(total) + Number(num);
+				}, 0);
+			};
+		},
+		calculateUnits: function calculateUnits() {
+			return function (year, sem) {
+				var total = [];
+
+				Object.entries(this.temp).forEach(function (_ref3) {
+					var _ref4 = _slicedToArray(_ref3, 2),
+					    key = _ref4[0],
+					    val = _ref4[1];
+
+					if (val.year == year && val.sem == sem) total.push(val.units); // the value of the current key.
+				});
+
+				return total.reduce(function (total, num) {
+					return Number(total) + Number(num);
+				}, 0);
+			};
+		}
+	}, _defineProperty(_computed, 'calculateLecHours', function calculateLecHours() {
+		return function (year, sem) {
+			var total = [];
+
+			Object.entries(this.temp).forEach(function (_ref5) {
+				var _ref6 = _slicedToArray(_ref5, 2),
+				    key = _ref6[0],
+				    val = _ref6[1];
+
+				if (val.year == year && val.sem == sem) total.push(val.lec_hours); // the value of the current key.
+			});
+
+			return total.reduce(function (total, num) {
+				return Number(total) + Number(num);
+			}, 0);
+		};
+	}), _defineProperty(_computed, 'calculateLabHours', function calculateLabHours() {
+		return function (year, sem) {
+			var total = [];
+
+			Object.entries(this.temp).forEach(function (_ref7) {
+				var _ref8 = _slicedToArray(_ref7, 2),
+				    key = _ref8[0],
+				    val = _ref8[1];
+
+				if (val.year == year && val.sem == sem) total.push(val.lab_hours); // the value of the current key.
+			});
+
+			return total.reduce(function (total, num) {
+				return Number(total) + Number(num);
+			}, 0);
+		};
+	}), _defineProperty(_computed, 'calculateContactHours', function calculateContactHours() {
+		return function (year, sem) {
+			var total = [];
+
+			Object.entries(this.temp).forEach(function (_ref9) {
+				var _ref10 = _slicedToArray(_ref9, 2),
+				    key = _ref10[0],
+				    val = _ref10[1];
+
+				if (val.year == year && val.sem == sem) total.push(val.contact_hours); // the value of the current key.
+			});
+
+			return total.reduce(function (total, num) {
+				return Number(total) + Number(num);
+			}, 0);
+		};
+	}), _defineProperty(_computed, 'calculateLecUnits', function calculateLecUnits() {
+		return function (year, sem) {
+			var total = [];
+
+			Object.entries(this.temp).forEach(function (_ref11) {
+				var _ref12 = _slicedToArray(_ref11, 2),
+				    key = _ref12[0],
+				    val = _ref12[1];
+
+				if (val.year == year && val.sem == sem) total.push(val.lec_units); // the value of the current key.
+			});
+
+			return total.reduce(function (total, num) {
+				return Number(total) + Number(num);
+			}, 0);
+		};
+	}), _defineProperty(_computed, 'calculateLabUnits', function calculateLabUnits() {
+		return function (year, sem) {
+			var total = [];
+
+			Object.entries(this.temp).forEach(function (_ref13) {
+				var _ref14 = _slicedToArray(_ref13, 2),
+				    key = _ref14[0],
+				    val = _ref14[1];
+
+				if (val.year == year && val.sem == sem) total.push(val.lab_units); // the value of the current key.
+			});
+
+			return total.reduce(function (total, num) {
+				return Number(total) + Number(num);
+			}, 0);
+		};
+	}), _computed),
+
 	mounted: function mounted() {
 		var _this2 = this;
 
@@ -59762,7 +60073,7 @@ var Update = __webpack_require__(13);
 	methods: {
 		openAdd: function openAdd(year, sem) {
 			this.$children[0].list.year = year;
-			this.$children[0].list.course_id = this.$route.params.id;
+			this.$children[0].list.curriculum_id = this.$route.params.id;
 			this.$children[0].list.sem = sem;
 			this.$children[0].subject = this.subjects;
 			this.addActive = 'is-active';
@@ -59807,13 +60118,12 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("nav", { staticClass: "panel block" }, [
-        _c("p", { staticClass: "panel-heading" }, [
-          _vm._v(
-            "\n\t\t\tCurriculum " +
-              _vm._s(this.$route.params.name) +
-              "\n\t\t\t\n\t\t\t"
-          ),
+      _c("div", { staticClass: "container column is-11" }, [
+        _c("div", { staticClass: "column is-11" }, [
+          _c("strong", { staticClass: "is-pulled-right" }, [
+            _vm._v(" " + _vm._s(this.$route.params.name) + " ")
+          ]),
+          _vm._v(" "),
           _vm.loading
             ? _c("span", { staticClass: "is-pulled-right" }, [
                 _c("i", { staticClass: "fa fa-refresh fa-spin fa-2x fa-fw" })
@@ -59821,7 +60131,7 @@ var render = function() {
             : _vm._e()
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "panel-block" }, [
+        _c("div", { staticClass: "column is-11" }, [
           _c("div", { staticClass: "tabs is-medium" }, [
             _c(
               "div",
@@ -59845,731 +60155,1629 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "panel" }, [
-          _c(
-            "div",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.currentTab === 0,
-                  expression: "currentTab === 0"
-                }
-              ],
-              staticClass: "container"
-            },
-            [
-              _vm._m(0),
-              _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 1 && item.sem == 1
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openUpdate(key)
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              }),
-              _vm._v(" "),
-              _vm._m(2),
-              _vm._v(" "),
-              _vm._m(3),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 1 && item.sem == 2
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openUpdate(key)
-                            }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              })
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.currentTab === 0,
+                expression: "currentTab === 0"
+              }
             ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              directives: [
+            staticClass: "column is-11"
+          },
+          [
+            _c("h3", [
+              _vm._v("First Year - "),
+              _c("strong", [_vm._v("1st Semester")]),
+              _vm._v(" "),
+              _c(
+                "button",
                 {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.currentTab === 1,
-                  expression: "currentTab === 1"
-                }
-              ],
-              staticClass: "container"
-            },
-            [
-              _vm._m(4),
+                  staticClass: "button is-primary is-outlined is-pulled-right",
+                  on: {
+                    click: function($event) {
+                      _vm.openAdd(1, 1)
+                    }
+                  }
+                },
+                [_vm._v("\n\t\t\t\t\tAdd New\n\t\t\t\t")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table is-hoverable" }, [
+              _c("thead", [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", { attrs: { colspan: "2" } }),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateUnits(1, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecHours(1, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabHours(1, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateContactHours(1, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecUnits(1, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabUnits(1, 1)))]),
+                  _vm._v(" "),
+                  _c("th")
+                ])
+              ]),
               _vm._v(" "),
-              _vm._m(5),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 2 && item.sem == 1
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openUpdate(key)
+              _c(
+                "tbody",
+                _vm._l(_vm.temp, function(item, key) {
+                  return item.year == 1 && item.sem == 1
+                    ? _c("tr", [
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-edit",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openUpdate(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td"),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
                             }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              }),
-              _vm._v(" "),
-              _vm._m(6),
-              _vm._v(" "),
-              _vm._m(7),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 2 && item.sem == 2
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openUpdate(key)
+                          },
+                          [_vm._v(_vm._s(item.subject_code))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
                             }
-                          }
-                        })
+                          },
+                          [_vm._v(_vm._s(item.descriptive_title))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.prerequisite))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.contact_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.grade))]
+                        )
                       ])
-                    ])
-                  : _vm._e()
-              })
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              directives: [
+                    : _vm._e()
+                })
+              )
+            ]),
+            _vm._v(" "),
+            _c("h3", [
+              _vm._v("First Year - "),
+              _c("strong", [_vm._v("2nd Semester")]),
+              _vm._v(" "),
+              _c(
+                "button",
                 {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.currentTab === 2,
-                  expression: "currentTab === 2"
-                }
-              ],
-              staticClass: "container"
-            },
-            [
-              _vm._m(8),
+                  staticClass: "button is-primary is-outlined is-pulled-right",
+                  on: {
+                    click: function($event) {
+                      _vm.openAdd(1, 2)
+                    }
+                  }
+                },
+                [_vm._v("\n\t\t\t\t\tAdd New\n\t\t\t\t")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table is-hoverable" }, [
+              _c("thead", [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", { attrs: { colspan: "2" } }),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateUnits(1, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecHours(1, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabHours(1, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateContactHours(1, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecUnits(1, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabUnits(1, 2)))]),
+                  _vm._v(" "),
+                  _c("th")
+                ])
+              ]),
               _vm._v(" "),
-              _vm._m(9),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 3 && item.sem == 1
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openUpdate(key)
+              _c(
+                "tbody",
+                _vm._l(_vm.temp, function(item, key) {
+                  return item.year == 1 && item.sem == 2
+                    ? _c("tr", [
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-edit",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openUpdate(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td"),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
                             }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              }),
-              _vm._v(" "),
-              _vm._m(10),
-              _vm._v(" "),
-              _vm._m(11),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 3 && item.sem == 2
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openUpdate(key)
+                          },
+                          [_vm._v(_vm._s(item.subject_code))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
                             }
-                          }
-                        })
+                          },
+                          [_vm._v(_vm._s(item.descriptive_title))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.prerequisite))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.contact_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.grade))]
+                        )
                       ])
-                    ])
-                  : _vm._e()
-              })
+                    : _vm._e()
+                })
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.currentTab === 1,
+                expression: "currentTab === 1"
+              }
             ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              directives: [
+            staticClass: "column is-11"
+          },
+          [
+            _c("h3", [
+              _vm._v("Second Year - "),
+              _c("strong", [_vm._v("1st Semester")]),
+              _vm._v(" "),
+              _c(
+                "button",
                 {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.currentTab === 3,
-                  expression: "currentTab === 3"
-                }
-              ],
-              staticClass: "container"
-            },
-            [
-              _vm._m(12),
+                  staticClass: "button is-primary is-outlined is-pulled-right",
+                  on: {
+                    click: function($event) {
+                      _vm.openAdd(2, 1)
+                    }
+                  }
+                },
+                [_vm._v("\n\t\t\t\t\tAdd New\n\t\t\t\t")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table is-hoverable" }, [
+              _c("thead", [
+                _vm._m(2),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", { attrs: { colspan: "2" } }),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateUnits(2, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecHours(2, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabHours(2, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateContactHours(2, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecUnits(2, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabUnits(2, 1)))]),
+                  _vm._v(" "),
+                  _c("th")
+                ])
+              ]),
               _vm._v(" "),
-              _vm._m(13),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 4 && item.sem == 1
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openUpdate(key)
+              _c(
+                "tbody",
+                _vm._l(_vm.temp, function(item, key) {
+                  return item.year == 2 && item.sem == 1
+                    ? _c("tr", [
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-edit",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openUpdate(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td"),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
                             }
-                          }
-                        })
-                      ])
-                    ])
-                  : _vm._e()
-              }),
-              _vm._v(" "),
-              _vm._m(14),
-              _vm._v(" "),
-              _vm._m(15),
-              _vm._v(" "),
-              _vm._l(_vm.temp, function(item, key) {
-                return item.year == 4 && item.sem == 2
-                  ? _c("a", { staticClass: "panel-block " }, [
-                      _c("span", { staticClass: "column is-2" }, [
-                        _vm._v(
-                          "\n\n\t\t\t\t\t\t" +
-                            _vm._s(item.subject_code) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-3" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.descriptive_title) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.prerequisite) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.units) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lec_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.lab_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" +
-                            _vm._s(item.contact_hours) +
-                            "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "column is-1" }, [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t" + _vm._s(item.grade) + "\n\t\t\t\t\t"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "panel-icon column is-1" }, [
-                        _c("i", {
-                          staticClass: "has-text-primary fa fa-edit",
-                          attrs: { "aria-hidden": "true" },
-                          on: {
-                            click: function($event) {
-                              _vm.openUpdate(key)
+                          },
+                          [_vm._v(_vm._s(item.subject_code))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
                             }
-                          }
-                        })
+                          },
+                          [_vm._v(_vm._s(item.descriptive_title))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.prerequisite))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.contact_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.grade))]
+                        )
                       ])
-                    ])
-                  : _vm._e()
-              })
+                    : _vm._e()
+                })
+              )
+            ]),
+            _vm._v(" "),
+            _c("h3", [
+              _vm._v("Second Year - "),
+              _c("strong", [_vm._v("2nd Semester")]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "button is-primary is-outlined is-pulled-right",
+                  on: {
+                    click: function($event) {
+                      _vm.openAdd(2, 2)
+                    }
+                  }
+                },
+                [_vm._v("\n\t\t\t\t\tAdd New\n\t\t\t\t")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table is-hoverable" }, [
+              _c("thead", [
+                _vm._m(3),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", { attrs: { colspan: "2" } }),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateUnits(2, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecHours(2, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabHours(2, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateContactHours(2, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecUnits(2, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabUnits(2, 2)))]),
+                  _vm._v(" "),
+                  _c("th")
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.temp, function(item, key) {
+                  return item.year == 2 && item.sem == 2
+                    ? _c("tr", [
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-edit",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openUpdate(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td"),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.subject_code))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.descriptive_title))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.prerequisite))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.contact_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.grade))]
+                        )
+                      ])
+                    : _vm._e()
+                })
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.currentTab === 2,
+                expression: "currentTab === 2"
+              }
             ],
-            2
-          )
-        ])
+            staticClass: "column is-11"
+          },
+          [
+            _c("h3", [
+              _vm._v("Third Year - "),
+              _c("strong", [_vm._v("1st Semester")]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "button is-primary is-outlined is-pulled-right",
+                  on: {
+                    click: function($event) {
+                      _vm.openAdd(3, 1)
+                    }
+                  }
+                },
+                [_vm._v("\n\t\t\t\t\tAdd New\n\t\t\t\t")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table is-hoverable" }, [
+              _c("thead", [
+                _vm._m(4),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", { attrs: { colspan: "2" } }),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateUnits(3, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecHours(3, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabHours(3, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateContactHours(3, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecUnits(3, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabUnits(3, 1)))]),
+                  _vm._v(" "),
+                  _c("th")
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.temp, function(item, key) {
+                  return item.year == 3 && item.sem == 1
+                    ? _c("tr", [
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-edit",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openUpdate(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td"),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.subject_code))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.descriptive_title))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.prerequisite))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.contact_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.grade))]
+                        )
+                      ])
+                    : _vm._e()
+                })
+              )
+            ]),
+            _vm._v(" "),
+            _c("h3", [
+              _vm._v("Third Year - "),
+              _c("strong", [_vm._v("2nd Semester")]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "button is-primary is-outlined is-pulled-right",
+                  on: {
+                    click: function($event) {
+                      _vm.openAdd(3, 2)
+                    }
+                  }
+                },
+                [_vm._v("\n\t\t\t\t\tAdd New\n\t\t\t\t")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table is-hoverable" }, [
+              _c("thead", [
+                _vm._m(5),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", { attrs: { colspan: "2" } }),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateUnits(3, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecHours(3, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabHours(3, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateContactHours(3, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecUnits(3, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabUnits(3, 2)))]),
+                  _vm._v(" "),
+                  _c("th")
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.temp, function(item, key) {
+                  return item.year == 3 && item.sem == 2
+                    ? _c("tr", [
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-edit",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openUpdate(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td"),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.subject_code))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.descriptive_title))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.prerequisite))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.contact_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.grade))]
+                        )
+                      ])
+                    : _vm._e()
+                })
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.currentTab === 3,
+                expression: "currentTab === 3"
+              }
+            ],
+            staticClass: "column is-11"
+          },
+          [
+            _c("h3", [
+              _vm._v("Fourth Year - "),
+              _c("strong", [_vm._v("1st Semester")]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "button is-primary is-outlined is-pulled-right",
+                  on: {
+                    click: function($event) {
+                      _vm.openAdd(4, 1)
+                    }
+                  }
+                },
+                [_vm._v("\n\t\t\t\t\tAdd New\n\t\t\t\t")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table is-hoverable" }, [
+              _c("thead", [
+                _vm._m(6),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", { attrs: { colspan: "2" } }),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateUnits(4, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecHours(4, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabHours(4, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateContactHours(4, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecUnits(4, 1)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabUnits(4, 1)))]),
+                  _vm._v(" "),
+                  _c("th")
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.temp, function(item, key) {
+                  return item.year == 4 && item.sem == 1
+                    ? _c("tr", [
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-edit",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openUpdate(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td"),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.subject_code))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.descriptive_title))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.prerequisite))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.contact_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.grade))]
+                        )
+                      ])
+                    : _vm._e()
+                })
+              )
+            ]),
+            _vm._v(" "),
+            _c("h3", [
+              _vm._v("Fourth Year - "),
+              _c("strong", [_vm._v("2nd Semester")]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "button is-primary is-outlined is-pulled-right",
+                  on: {
+                    click: function($event) {
+                      _vm.openAdd(4, 2)
+                    }
+                  }
+                },
+                [_vm._v("\n\t\t\t\t\tAdd New\n\t\t\t\t")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table is-hoverable" }, [
+              _c("thead", [
+                _vm._m(7),
+                _vm._v(" "),
+                _c("tr", [
+                  _c("th", { attrs: { colspan: "2" } }),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th"),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateUnits(4, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecHours(4, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabHours(4, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateContactHours(4, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLecUnits(4, 2)))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(_vm.calculateLabUnits(4, 2)))]),
+                  _vm._v(" "),
+                  _c("th")
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.temp, function(item, key) {
+                  return item.year == 4 && item.sem == 2
+                    ? _c("tr", [
+                        _c("td", [
+                          _c("a", [
+                            _c("span", [
+                              _c("i", {
+                                staticClass: "has-text-primary fa fa-edit",
+                                attrs: { "aria-hidden": "true" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.openUpdate(key)
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("td"),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.subject_code))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.descriptive_title))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.prerequisite))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.contact_hours))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lec_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.lab_units))]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          {
+                            on: {
+                              click: function($event) {
+                                _vm.openUpdate(key)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.grade))]
+                        )
+                      ])
+                    : _vm._e()
+                })
+              )
+            ])
+          ]
+        )
       ]),
       _vm._v(" "),
       _c("Add", {
@@ -60595,392 +61803,224 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notification" }, [
-      _c("h3", [
-        _vm._v("First Year - "),
-        _c("strong", [_vm._v("1st Semester")])
-      ])
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Subject Code")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Descriptive Title")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Prerequisite")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lec Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Contact Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lecture Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Grade")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Subject Code")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Descriptive Title")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Prerequisite")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Units")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lec Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lab Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
-      ])
+      _c("th", [_vm._v("Contact Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lecture Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Grade")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notification" }, [
-      _c("h3", [
-        _vm._v("First Year - "),
-        _c("strong", [_vm._v("2nd Semester")])
-      ])
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Subject Code")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Descriptive Title")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Prerequisite")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lec Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Contact Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lecture Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Grade")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Subject Code")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Descriptive Title")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Prerequisite")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Units")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lec Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lab Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
-      ])
+      _c("th", [_vm._v("Contact Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lecture Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Grade")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notification" }, [
-      _c("h3", [
-        _vm._v("Second Year - "),
-        _c("strong", [_vm._v("1st Semester")])
-      ])
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Subject Code")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Descriptive Title")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Prerequisite")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lec Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Contact Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lecture Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Grade")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Subject Code")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Descriptive Title")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Prerequisite")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Units")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lec Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lab Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
-      ])
+      _c("th", [_vm._v("Contact Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lecture Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Grade")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notification" }, [
-      _c("h3", [
-        _vm._v("Second Year - "),
-        _c("strong", [_vm._v("2nd Semester")])
-      ])
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Subject Code")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Descriptive Title")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Prerequisite")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lec Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Contact Hours")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lecture Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Lab Units")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Grade")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "2" } }, [_vm._v("Action")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Subject Code")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Descriptive Title")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Prerequisite")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Units")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lec Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lab Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notification" }, [
-      _c("h3", [
-        _vm._v("Third Year - "),
-        _c("strong", [_vm._v("1st Semester")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Contact Hours")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lecture Units")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
+      _c("th", [_vm._v("Lab Units")]),
       _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notification" }, [
-      _c("h3", [
-        _vm._v("Third Year - "),
-        _c("strong", [_vm._v("2nd Semester")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notification" }, [
-      _c("h3", [
-        _vm._v("Fourth Year - "),
-        _c("strong", [_vm._v("1st Semester")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "notification" }, [
-      _c("h3", [
-        _vm._v("Fourth Year - "),
-        _c("strong", [_vm._v("2nd Semester")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-2" }, [
-        _vm._v("\n\n\t\t\t\t\t\tSubject Code\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-3" }, [
-        _vm._v("\n\t\t\t\t\t\tDescriptive Title\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tPrerequisite\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tUnits\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLecture Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tLab Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tContact Hours\n\t\t\t\t\t")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "column is-1" }, [
-        _vm._v("\n\t\t\t\t\t\tGrade\n\t\t\t\t\t")
-      ])
+      _c("th", [_vm._v("Grade")])
     ])
   }
 ]

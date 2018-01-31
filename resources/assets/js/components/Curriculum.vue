@@ -55,7 +55,9 @@
         <a>
 
             <span>
+                <router-link :to="{ path: '/curriculumsubject/' + item.curriculum_id + '/'+ item.course_name + '/'+ item.year}">
               <i class="has-text-primary fa fa-list-ol" aria-hidden="true" @click="openShow(key)"></i>
+          </router-link>
           </span>
 
       </a>

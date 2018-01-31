@@ -21,11 +21,7 @@
 						<input class="input" :class="{'is-danger':errors.name}" type="text" placeholder="Prerequisite" v-model="list.prerequisite">
 					</div>
 					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>
-					<label class="label">Units</label>
-					<div class="control">
-						<input class="input" :class="{'is-danger':errors.name}" type="number" placeholder="Units" v-model="list.units">
-					</div>
-					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>
+				
 					<label class="label">Lecture Hours</label>
 					<div class="control">
 						<input class="input" :class="{'is-danger':errors.name}" type="number" placeholder="Lecture Hours" v-model="list.lec_hours">
@@ -40,7 +36,18 @@
 					<div class="control">
 						<input class="input" :class="{'is-danger':errors.name}" type="number" placeholder="Contact Hours" disabled :value="computeTotal">
 					</div>
-					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>						
+					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>
+					<label class="label">Lec Units</label>
+					<div class="control">
+						<input class="input" :class="{'is-danger':errors.name}" type="number" placeholder="Lec Units" v-model="list.lec_units">
+					</div>
+					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>
+					<label class="label">Lab Units</label>
+					<div class="control">
+						<input class="input" :class="{'is-danger':errors.name}" type="number" placeholder="Lab Units" v-model="list.lab_units">
+					</div>
+					<small v-if="errors.name" class="has-text-danger">{{ errors.name[0] }}</small>
+										
 				</div>
 				
 
@@ -93,9 +100,10 @@ methods:{
 	},
 
 	save(){
+	
 		this.$data.list.subject_id = this.$data.subject[this.$data.list.subject_key].subject_id;
 		axios.post('/curriculumsubject/store', this.$data.list).then((response)=> {
-			console.log(response);
+			
 
 			this.close();
 			this.$parent.lists.push(response.data[0])

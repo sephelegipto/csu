@@ -39,6 +39,8 @@
 						<th>Lec Hours</th>
 						<th>Lab Hours</th>
 						<th>Contact Hours</th>
+						<th>Lecture Units</th>
+						<th>Lab Units</th>
 					</tr>
 					<tr>
 						<th colspan="2"></th>
@@ -47,10 +49,13 @@
 						<th></th>
 						<th></th>
 						<th></th>
-						<th><p class="has-text-centered">{{ calculateUnits(1,1) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateLecHours(1,1) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateLabHours(1,1) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateContactHours(1,1) }}</p></th>
+						<th>{{ calculateUnits(1,1) }}</th>
+						<th>{{ calculateLecHours(1,1) }}</th>
+						<th>{{ calculateLabHours(1,1) }}</th>
+						<th>{{ calculateContactHours(1,1) }}</th>
+						<th>{{ calculateLecUnits(1,1) }}</th>
+						<th>{{ calculateLabUnits(1,1) }}</th>
+
 					</tr>
 				</thead>
 				<tbody>
@@ -60,25 +65,27 @@
 								<span>
 									<i class="has-text-primary fa fa-edit" aria-hidden="true" @click="openUpdate(key)"></i>
 								</span>
-							
+
 							</a>
 						</td>
 						<td>
 							<a>
-									<span>
+								<span>
 									<i class="has-text-danger fa fa-times" aria-hidden="true" @click="del(key,item.curriculumsubject_id)"></i>
 
 								</span>
 							</a>
 						</td>
 
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.subject_code }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.descriptive_title }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.prerequisite }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.units }} </p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.lec_hours }} </p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.lab_hours }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.contact_hours }}</p></td>
+						<td @click="openUpdate(key)">{{ item.subject_code }}</td>
+						<td @click="openUpdate(key)">{{ item.descriptive_title }}</td>
+						<td @click="openUpdate(key)">{{ item.prerequisite }}</td>
+						<td @click="openUpdate(key)">{{ item.units }}</td>
+						<td @click="openUpdate(key)">{{ item.lec_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.lab_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.contact_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.lec_units }}</td>
+						<td @click="openUpdate(key)">{{ item.lab_units }}</td>
 					</tr>
 
 				</tbody>
@@ -102,6 +109,9 @@
 						<th>Lec Hours</th>
 						<th>Lab Hours</th>
 						<th>Contact Hours</th>
+						<th>Lecture Units</th>
+						<th>Lab Units</th>
+						
 					</tr>
 					<tr>
 						<th colspan="2"></th>
@@ -110,10 +120,12 @@
 						<th></th>
 						<th></th>
 						<th></th>
-						<th><p class="has-text-centered">{{ calculateUnits(1,2) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateLecHours(1,2) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateLabHours(1,2) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateContactHours(1,2) }}</p></th>
+						<th>{{ calculateUnits(1,2) }}</th>
+						<th>{{ calculateLecHours(1,2) }}</th>
+						<th>{{ calculateLabHours(1,2) }}</th>
+						<th>{{ calculateContactHours(1,2) }}</th>
+						<th>{{ calculateLecUnits(1,2) }}</th>
+						<th>{{ calculateLabUnits(1,2) }}</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -123,25 +135,27 @@
 								<span>
 									<i class="has-text-primary fa fa-edit" aria-hidden="true" @click="openUpdate(key)"></i>
 								</span>
-							
+
 							</a>
 						</td>
 						<td>
 							<a>
-									<span>
+								<span>
 									<i class="has-text-danger fa fa-times" aria-hidden="true" @click="del(key,item.curriculumsubject_id)"></i>
 
 								</span>
 							</a>
 						</td>
 
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.subject_code }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.descriptive_title }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.prerequisite }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.units }} </p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.lec_hours }} </p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.lab_hours }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.contact_hours }}</p></td>
+						<td @click="openUpdate(key)">{{ item.subject_code }}</td>
+						<td @click="openUpdate(key)">{{ item.descriptive_title }}</td>
+						<td @click="openUpdate(key)">{{ item.prerequisite }}</td>
+						<td @click="openUpdate(key)">{{ item.units }}</td>
+						<td @click="openUpdate(key)">{{ item.lec_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.lab_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.contact_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.lec_units }}</td>
+						<td @click="openUpdate(key)">{{ item.lab_units }}</td>
 
 					</tr>
 
@@ -168,6 +182,8 @@
 						<th>Lec Hours</th>
 						<th>Lab Hours</th>
 						<th>Contact Hours</th>
+						<th>Lecture Units</th>
+						<th>Lab Units</th>
 					</tr>
 					<tr>
 						<th colspan="2"></th>
@@ -176,10 +192,12 @@
 						<th></th>
 						<th></th>
 						<th></th>
-						<th><p class="has-text-centered">{{ calculateUnits(2,1) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateLecHours(2,1) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateLabHours(2,1) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateContactHours(2,1) }}</p></th>
+						<th>{{ calculateUnits(2,1) }}</th>
+						<th>{{ calculateLecHours(2,1) }}</th>
+						<th>{{ calculateLabHours(2,1) }}</th>
+						<th>{{ calculateContactHours(2,1) }}</th>
+						<th>{{ calculateLecUnits(2,1) }}</th>
+						<th>{{ calculateLabUnits(2,1) }}</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -189,25 +207,27 @@
 								<span>
 									<i class="has-text-primary fa fa-edit" aria-hidden="true" @click="openUpdate(key)"></i>
 								</span>
-							
+
 							</a>
 						</td>
 						<td>
 							<a>
-									<span>
+								<span>
 									<i class="has-text-danger fa fa-times" aria-hidden="true" @click="del(key,item.curriculumsubject_id)"></i>
 
 								</span>
 							</a>
 						</td>
 
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.subject_code }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.descriptive_title }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.prerequisite }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.units }} </p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.lec_hours }} </p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.lab_hours }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.contact_hours }}</p></td>
+						<td @click="openUpdate(key)">{{ item.subject_code }}</td>
+						<td @click="openUpdate(key)">{{ item.descriptive_title }}</td>
+						<td @click="openUpdate(key)">{{ item.prerequisite }}</td>
+						<td @click="openUpdate(key)">{{ item.units }}</td>
+						<td @click="openUpdate(key)">{{ item.lec_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.lab_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.contact_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.lec_units }}</td>
+						<td @click="openUpdate(key)">{{ item.lab_units }}</td>
 					</tr>
 
 				</tbody>
@@ -231,6 +251,8 @@
 						<th>Lec Hours</th>
 						<th>Lab Hours</th>
 						<th>Contact Hours</th>
+						<th>Lecture Units</th>
+						<th>Lab Units</th>
 					</tr>
 					<tr>
 						<th colspan="2"></th>
@@ -239,10 +261,12 @@
 						<th></th>
 						<th></th>
 						<th></th>
-						<th><p class="has-text-centered">{{ calculateUnits(2,2) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateLecHours(2,2) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateLabHours(2,2) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateContactHours(2,2) }}</p></th>
+						<th>{{ calculateUnits(2,2) }}</th>
+						<th>{{ calculateLecHours(2,2) }}</th>
+						<th>{{ calculateLabHours(2,2) }}</th>
+						<th>{{ calculateContactHours(2,2) }}</th>
+						<th>{{ calculateLecUnits(2,2) }}</th>
+						<th>{{ calculateLabUnits(2,2) }}</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -252,25 +276,27 @@
 								<span>
 									<i class="has-text-primary fa fa-edit" aria-hidden="true" @click="openUpdate(key)"></i>
 								</span>
-							
+
 							</a>
 						</td>
 						<td>
 							<a>
-									<span>
+								<span>
 									<i class="has-text-danger fa fa-times" aria-hidden="true" @click="del(key,item.curriculumsubject_id)"></i>
 
 								</span>
 							</a>
 						</td>
 
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.subject_code }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.descriptive_title }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.prerequisite }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.units }} </p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.lec_hours }} </p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.lab_hours }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.contact_hours }}</p></td>
+						<td @click="openUpdate(key)">{{ item.subject_code }}</td>
+						<td @click="openUpdate(key)">{{ item.descriptive_title }}</td>
+						<td @click="openUpdate(key)">{{ item.prerequisite }}</td>
+						<td @click="openUpdate(key)">{{ item.units }}</td>
+						<td @click="openUpdate(key)">{{ item.lec_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.lab_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.contact_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.lec_units }}</td>
+						<td @click="openUpdate(key)">{{ item.lab_units }}</td>
 
 					</tr>
 
@@ -297,6 +323,8 @@
 						<th>Lec Hours</th>
 						<th>Lab Hours</th>
 						<th>Contact Hours</th>
+						<th>Lecture Units</th>
+						<th>Lab Units</th>
 					</tr>
 					<tr>
 						<th colspan="2"></th>
@@ -305,10 +333,12 @@
 						<th></th>
 						<th></th>
 						<th></th>
-						<th><p class="has-text-centered">{{ calculateUnits(3,1) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateLecHours(3,1) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateLabHours(3,1) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateContactHours(3,1) }}</p></th>
+						<th>{{ calculateUnits(3,1) }}</th>
+						<th>{{ calculateLecHours(3,1) }}</th>
+						<th>{{ calculateLabHours(3,1) }}</th>
+						<th>{{ calculateContactHours(3,1) }}</th>
+						<th>{{ calculateLecUnits(3,1) }}</th>
+						<th>{{ calculateLabUnits(3,1) }}</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -318,25 +348,27 @@
 								<span>
 									<i class="has-text-primary fa fa-edit" aria-hidden="true" @click="openUpdate(key)"></i>
 								</span>
-							
+
 							</a>
 						</td>
 						<td>
 							<a>
-									<span>
+								<span>
 									<i class="has-text-danger fa fa-times" aria-hidden="true" @click="del(key,item.curriculumsubject_id)"></i>
 
 								</span>
 							</a>
 						</td>
 
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.subject_code }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.descriptive_title }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.prerequisite }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.units }} </p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.lec_hours }} </p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.lab_hours }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.contact_hours }}</p></td>
+					<td @click="openUpdate(key)">{{ item.subject_code }}</td>
+						<td @click="openUpdate(key)">{{ item.descriptive_title }}</td>
+						<td @click="openUpdate(key)">{{ item.prerequisite }}</td>
+						<td @click="openUpdate(key)">{{ item.units }}</td>
+						<td @click="openUpdate(key)">{{ item.lec_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.lab_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.contact_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.lec_units }}</td>
+						<td @click="openUpdate(key)">{{ item.lab_units }}</td>
 					</tr>
 
 				</tbody>
@@ -360,6 +392,8 @@
 						<th>Lec Hours</th>
 						<th>Lab Hours</th>
 						<th>Contact Hours</th>
+						<th>Lecture Units</th>
+						<th>Lab Units</th>
 					</tr>
 					<tr>
 						<th colspan="2"></th>
@@ -368,10 +402,12 @@
 						<th></th>
 						<th></th>
 						<th></th>
-						<th><p class="has-text-centered">{{ calculateUnits(3,2) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateLecHours(3,2) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateLabHours(3,2) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateContactHours(3,2) }}</p></th>
+						<th>{{ calculateUnits(3,2) }}</th>
+						<th>{{ calculateLecHours(3,2) }}</th>
+						<th>{{ calculateLabHours(3,2) }}</th>
+						<th>{{ calculateContactHours(3,2) }}</th>
+						<th>{{ calculateLecUnits(3,2) }}</th>
+						<th>{{ calculateLabUnits(3,2) }}</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -381,25 +417,27 @@
 								<span>
 									<i class="has-text-primary fa fa-edit" aria-hidden="true" @click="openUpdate(key)"></i>
 								</span>
-							
+
 							</a>
 						</td>
 						<td>
 							<a>
-									<span>
+								<span>
 									<i class="has-text-danger fa fa-times" aria-hidden="true" @click="del(key,item.curriculumsubject_id)"></i>
 
 								</span>
 							</a>
 						</td>
 
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.subject_code }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.descriptive_title }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.prerequisite }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.units }} </p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.lec_hours }} </p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.lab_hours }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.contact_hours }}</p></td>
+						<td @click="openUpdate(key)">{{ item.subject_code }}</td>
+						<td @click="openUpdate(key)">{{ item.descriptive_title }}</td>
+						<td @click="openUpdate(key)">{{ item.prerequisite }}</td>
+						<td @click="openUpdate(key)">{{ item.units }}</td>
+						<td @click="openUpdate(key)">{{ item.lec_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.lab_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.contact_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.lec_units }}</td>
+						<td @click="openUpdate(key)">{{ item.lab_units }}</td>
 
 					</tr>
 
@@ -426,6 +464,8 @@
 						<th>Lec Hours</th>
 						<th>Lab Hours</th>
 						<th>Contact Hours</th>
+						<th>Lecture Units</th>
+						<th>Lab Units</th>
 					</tr>
 					<tr>
 						<th colspan="2"></th>
@@ -434,10 +474,12 @@
 						<th></th>
 						<th></th>
 						<th></th>
-						<th><p class="has-text-centered">{{ calculateUnits(4,1) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateLecHours(4,1) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateLabHours(4,1) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateContactHours(4,1) }}</p></th>
+						<th>{{ calculateUnits(4,1) }}</th>
+						<th>{{ calculateLecHours(4,1) }}</th>
+						<th>{{ calculateLabHours(4,1) }}</p></th>
+						<th>{{ calculateContactHours(4,1) }}</th>
+						<th>{{ calculateLecUnits(4,1) }}</th>
+						<th>{{ calculateLabUnits(4,1) }}</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -447,25 +489,27 @@
 								<span>
 									<i class="has-text-primary fa fa-edit" aria-hidden="true" @click="openUpdate(key)"></i>
 								</span>
-							
+
 							</a>
 						</td>
 						<td>
 							<a>
-									<span>
+								<span>
 									<i class="has-text-danger fa fa-times" aria-hidden="true" @click="del(key,item.curriculumsubject_id)"></i>
 
 								</span>
 							</a>
 						</td>
 
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.subject_code }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.descriptive_title }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.prerequisite }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.units }} </p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.lec_hours }} </p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.lab_hours }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.contact_hours }}</p></td>
+						<td @click="openUpdate(key)">{{ item.subject_code }}</td>
+						<td @click="openUpdate(key)">{{ item.descriptive_title }}</td>
+						<td @click="openUpdate(key)">{{ item.prerequisite }}</td>
+						<td @click="openUpdate(key)">{{ item.units }}</td>
+						<td @click="openUpdate(key)">{{ item.lec_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.lab_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.contact_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.lec_units }}</td>
+						<td @click="openUpdate(key)">{{ item.lab_units }}</td>
 					</tr>
 
 				</tbody>
@@ -489,6 +533,8 @@
 						<th>Lec Hours</th>
 						<th>Lab Hours</th>
 						<th>Contact Hours</th>
+						<th>Lecture Units</th>
+						<th>Lab Units</th>
 					</tr>
 					<tr>
 						<th colspan="2"></th>
@@ -497,10 +543,12 @@
 						<th></th>
 						<th></th>
 						<th></th>
-						<th><p class="has-text-centered">{{ calculateUnits(4,2) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateLecHours(4,2) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateLabHours(4,2) }}</p></th>
-						<th><p class="has-text-centered">{{ calculateContactHours(4,2) }}</p></th>
+						<th>{{ calculateUnits(4,2) }}</th>
+						<th>{{ calculateLecHours(4,2) }}</th>
+						<th>{{ calculateLabHours(4,2) }}</th>
+						<th>{{ calculateContactHours(4,2) }}</th>
+						<th>{{ calculateLecUnits(4,2) }}</th>
+						<th>{{ calculateLabUnits(4,2) }}</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -510,25 +558,27 @@
 								<span>
 									<i class="has-text-primary fa fa-edit" aria-hidden="true" @click="openUpdate(key)"></i>
 								</span>
-							
+
 							</a>
 						</td>
 						<td>
 							<a>
-									<span>
+								<span>
 									<i class="has-text-danger fa fa-times" aria-hidden="true" @click="del(key,item.curriculumsubject_id)"></i>
 
 								</span>
 							</a>
 						</td>
 
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.subject_code }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.descriptive_title }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.prerequisite }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.units }} </p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.lec_hours }} </p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.lab_hours }}</p></td>
-						<td @click="openUpdate(key)"><p class="has-text-centered">{{ item.contact_hours }}</p></td>
+						<td @click="openUpdate(key)">{{ item.subject_code }}</td>
+						<td @click="openUpdate(key)">{{ item.descriptive_title }}</td>
+						<td @click="openUpdate(key)">{{ item.prerequisite }}</td>
+						<td @click="openUpdate(key)">{{ item.units }}</td>
+						<td @click="openUpdate(key)">{{ item.lec_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.lab_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.contact_hours }}</td>
+						<td @click="openUpdate(key)">{{ item.lec_units }}</td>
+						<td @click="openUpdate(key)">{{ item.lab_units }}</td>
 
 					</tr>
 
@@ -590,9 +640,9 @@ export default{
 
 					Object.entries(this.temp).forEach(([key, val]) => {
 						if(val.year == year && val.sem == sem)
-      total.push(val.lec_hours)
+							total.push(val.lec_hours)
       alert(val.lec_hours) // the value of the current key.
-});
+  });
 
 					return total.reduce(function(total, num){ return Number(total) + Number(num) }, 0);
 				}
@@ -640,6 +690,30 @@ export default{
 					Object.entries(this.temp).forEach(([key, val]) => {
 						if(val.year == year && val.sem == sem)
       total.push(val.contact_hours) // the value of the current key.
+});
+
+					return total.reduce(function(total, num){ return Number(total) + Number(num) }, 0);
+				}
+			},
+			calculateLecUnits: function(){
+				return function(year,sem){
+					let total = [];
+
+					Object.entries(this.temp).forEach(([key, val]) => {
+						if(val.year == year && val.sem == sem)
+      total.push(val.lec_units) // the value of the current key.
+});
+
+					return total.reduce(function(total, num){ return Number(total) + Number(num) }, 0);
+				}
+			},
+			calculateLabUnits: function(){
+				return function(year,sem){
+					let total = [];
+
+					Object.entries(this.temp).forEach(([key, val]) => {
+						if(val.year == year && val.sem == sem)
+      total.push(val.lab_units) // the value of the current key.
 });
 
 					return total.reduce(function(total, num){ return Number(total) + Number(num) }, 0);

@@ -19,37 +19,39 @@ class StudentController extends Controller
 	}
 	
 	public function getStudentChecklist(Request $request){
-		$curriculum_id = Auth::user()->curriculum_id;
-		$collection = DB::table('curriculumsubjects')
-		->leftJoin('studentchecklists', 'curriculumsubjects.curriculumsubject_id', '=', 'studentchecklists.curriculumsubject_id')
-		->join('subjects', 'curriculumsubjects.subject_id', '=', 'subjects.subject_id')
+		$temptable = DB::raw("(SELECT * 
+			FROM curriculumsubjects WHERE curriculum_id = $request->curriculum_id) as cursub");
 
-		->select('curriculumsubjects.*','studentchecklists.grade as grade', 'subjects.*')
+		return DB::table('studentchecklists')
+
+		->leftJoin($temptable, 'cursub.curriculumsubject_id', '=', 'studentchecklists.curriculumsubject_id')
+		->join('subjects', 'subjects.subject_id', '=', 'cursub.subject_id') 
+		->select('subjects.*', 'cursub.*','subjects.subject_id as subject_id', 'studentchecklists.*')
 		->where('studentchecklists.user_id', $request->id)
-		->where('curriculumsubjects.identifier', '=' , 0)
-		->where('curriculumsubjects.curriculum_id', $curriculum_id)
-		->get();
+		->orWhere('cursub.subject_id', null)
 
-		$unique = $collection->unique('subject_code');
-		return $unique;
+	
+		->get();
 
 	}
 
 	public function getStudentChecklistForStudentPage(){
 		$curriculum_id = Auth::user()->curriculum_id;
 		$user_id = Auth::user()->id;
-		$collection = DB::table('curriculumsubjects')
-		->leftJoin('studentchecklists', 'curriculumsubjects.curriculumsubject_id', '=', 'studentchecklists.curriculumsubject_id')
-		->join('subjects', 'curriculumsubjects.subject_id', '=', 'subjects.subject_id')
 
-		->select('curriculumsubjects.*','studentchecklists.grade as grade', 'subjects.*')
+		$temptable = DB::raw("(SELECT * 
+			FROM curriculumsubjects WHERE curriculum_id = $curriculum_id) as cursub");
+
+		return DB::table('studentchecklists')
+
+		->leftJoin($temptable, 'cursub.curriculumsubject_id', '=', 'studentchecklists.curriculumsubject_id')
+		->join('subjects', 'subjects.subject_id', '=', 'cursub.subject_id') 
+		->select('subjects.*', 'cursub.*','subjects.subject_id as subject_id', 'studentchecklists.*')
 		->where('studentchecklists.user_id', $user_id)
-		->where('curriculumsubjects.identifier', '=' , 0)
-		->where('curriculumsubjects.curriculum_id', $curriculum_id)
+		->orWhere('cursub.subject_id', null)	
 		->get();
 
-		$unique = $collection->unique('subject_code');
-		return $unique;
+
 
 	}
 
@@ -62,13 +64,13 @@ class StudentController extends Controller
 	{
 		
 		$result = DB::table('studentchecklists')
-		->where('curriculumsubject_id', $request->data)
+		->where('curriculumsubject_id', $request->curriculumsubject_id)
 		->where('user_id', $request->user_id)
 		->get();
 
 		if($result->count() > 0){
 			DB::table('studentchecklists')
-			->where('curriculumsubject_id', $request->data)
+			->where('curriculumsubject_id', $request->curriculumsubject_id)
 			->where('user_id', $request->user_id)
 			->update(['grade' => $request->grade]);
 		} else {

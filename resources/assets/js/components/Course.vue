@@ -29,7 +29,7 @@
 
 
 				<th>Course</th>
-				<th>Department</th>
+				<th>Abbreviation</th>
 
 			</tr>
 		</thead>
@@ -53,7 +53,7 @@
 				</td>
 
 				<td @click="openUpdate(key)">{{ item.course_name }}</td>
-				<td @click="openUpdate(key)">{{ item.dept_name }}</td>
+				<td @click="openUpdate(key)">{{ item.abbre }}</td>
 				
 			</tr>
 
